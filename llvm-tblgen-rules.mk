@@ -188,6 +188,13 @@ $(generated_sources)/%GenGlobalISel.inc: $(tblgen_source_dir)/%.td \
 	$(call transform-td-to-out10,global-isel)
 endif
 
+ifneq ($(filter %GenGICombiner.inc,$(tblgen_gen_tables)),)
+$(generated_sources)/%GenGICombiner.inc: TBLGEN_LOCAL_MODULE := $(LOCAL_MODULE)
+$(generated_sources)/%GenGICombiner.inc: $(tblgen_source_dir)/%.td \
+                                   $(tblgen_td_deps) $(LLVM10_TBLGEN)
+	$(call transform-td-to-out10,global-isel-combiner -combiners="AArch64PreLegalizerCombinerHelper")
+endif
+
 ifneq ($(filter %GenSubtargetInfo.inc,$(tblgen_gen_tables)),)
 $(generated_sources)/%GenSubtargetInfo.inc: TBLGEN_LOCAL_MODULE := $(LOCAL_MODULE)
 $(generated_sources)/%GenSubtargetInfo.inc: $(tblgen_source_dir)/%.td \
