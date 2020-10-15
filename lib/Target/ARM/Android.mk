@@ -22,7 +22,6 @@ arm_codegen_SRC_FILES := \
   ARMBaseRegisterInfo.cpp \
   ARMBasicBlockInfo.cpp \
   ARMCallingConv.cpp \
-  ARMCodeGenPrepare.cpp \
   ARMConstantIslandPass.cpp \
   ARMConstantPoolValue.cpp \
   ARMExpandPseudoInsts.cpp \
@@ -46,6 +45,9 @@ arm_codegen_SRC_FILES := \
   ARMTargetObjectFile.cpp \
   ARMTargetTransformInfo.cpp \
   MLxExpansionPass.cpp \
+  MVEGatherScatterLowering.cpp \
+  MVETailPredication.cpp \
+  MVEVPTBlockPass.cpp \
   Thumb1FrameLowering.cpp \
   Thumb1InstrInfo.cpp \
   ThumbRegisterInfo.cpp \
