@@ -8,6 +8,7 @@ x86_codegen_TBLGEN_TABLES10 := \
   X86GenRegisterInfo.inc \
   X86GenInstrInfo.inc \
   X86GenDAGISel.inc \
+  X86GenExegesis.inc \
   X86GenFastISel.inc \
   X86GenSubtargetInfo.inc \
   X86GenCallingConv.inc \
@@ -15,6 +16,7 @@ x86_codegen_TBLGEN_TABLES10 := \
 
 x86_codegen_SRC_FILES := \
   X86AsmPrinter.cpp \
+  X86AvoidTrailingCall.cpp \
   X86CallFrameOptimization.cpp \
   X86CallingConv.cpp \
   X86CmovConversion.cpp \
@@ -33,19 +35,21 @@ x86_codegen_SRC_FILES := \
   X86ISelDAGToDAG.cpp \
   X86ISelLowering.cpp \
   X86IndirectBranchTracking.cpp \
+  X86IndirectThunks.cpp \
   X86InterleavedAccess.cpp \
   X86InsertPrefetch.cpp \
   X86InstrFMA3Info.cpp \
   X86InstrFoldTables.cpp \
   X86InstrInfo.cpp \
   X86EvexToVex.cpp \
+  X86LoadValueInjectionLoadHardening.cpp \
+  X86LoadValueInjectionRetHardening.cpp \
   X86MCInstLower.cpp \
   X86MachineFunctionInfo.cpp \
   X86MacroFusion.cpp \
   X86OptimizeLEAs.cpp \
   X86PadShortFunction.cpp \
   X86RegisterInfo.cpp \
-  X86RetpolineThunks.cpp \
   X86SelectionDAGInfo.cpp \
   X86ShuffleDecodeConstantPool.cpp \
   X86SpeculativeLoadHardening.cpp \
