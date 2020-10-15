@@ -55,6 +55,7 @@ LOCAL_CPPFLAGS :=	\
 	$(LOCAL_CPPFLAGS)	\
 	-Wno-sign-compare	\
 	-Wno-sign-promo         \
+	-Wno-unused-variable	\
 	-std=c++14
 
 LOCAL_CPPFLAGS_linux := \
