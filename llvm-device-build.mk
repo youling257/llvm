@@ -60,6 +60,7 @@ LOCAL_CPPFLAGS :=	\
 	-Woverloaded-virtual	\
 	-Wno-sign-compare	\
 	-Wno-sign-promo         \
+	-Wno-unused-variable	\
 	-std=c++14
 
 # Make sure bionic is first so we can include system headers.
