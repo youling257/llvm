@@ -80,7 +80,6 @@
 using namespace llvm;
 
 static RETSIGTYPE SignalHandler(int Sig);  // defined below.
-static RETSIGTYPE InfoSignalHandler(int Sig);  // defined below.
 
 using SignalHandlerFunctionType = void (*)();
 /// The function to call if ctrl-c is pressed.
@@ -309,7 +308,6 @@ static void RegisterHandlers() { // Not signal-safe.
       NewHandler.sa_flags = SA_NODEFER | SA_RESETHAND | SA_ONSTACK;
       break;
     case SignalKind::IsInfo:
-      NewHandler.sa_handler = InfoSignalHandler;
       NewHandler.sa_flags = SA_ONSTACK;
       break;
     }
@@ -349,7 +347,7 @@ void sys::CleanupOnSignal(uintptr_t Context) {
   int Sig = (int)Context;
 
   if (llvm::is_contained(InfoSigs, Sig)) {
-    InfoSignalHandler(Sig);
+    SignalHandler(Sig);
     return;
   }
 
@@ -404,12 +402,6 @@ static RETSIGTYPE SignalHandler(int Sig) {
   if (Sig == SIGILL || Sig == SIGFPE || Sig == SIGTRAP)
     raise(Sig);
 #endif
-}
-
-static RETSIGTYPE InfoSignalHandler(int Sig) {
-  SaveAndRestore<int> SaveErrnoDuringASignalHandler(errno);
-  if (SignalHandlerFunctionType CurrentInfoFunction = InfoSignalFunction)
-    CurrentInfoFunction();
 }
 
 void llvm::sys::RunInterruptHandlers() {
