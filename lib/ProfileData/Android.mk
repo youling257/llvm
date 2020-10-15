@@ -1,6 +1,7 @@
 LOCAL_PATH:= $(call my-dir)
 
 profiledata_SRC_FILES := \
+  GCOV.cpp \
   InstrProf.cpp \
   InstrProfReader.cpp \
   InstrProfWriter.cpp \
