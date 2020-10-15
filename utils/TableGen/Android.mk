@@ -63,6 +63,7 @@ REQUIRES_RTTI := 1
 
 LOCAL_STATIC_LIBRARIES := \
   libLLVM10TableGen \
+  libLLVM10TableGenGlobalISel \
   libLLVM10Support
 
 LOCAL_LDLIBS += -lm
