@@ -50,12 +50,12 @@ REQUIRES_RTTI := 1
 
 LOCAL_SRC_FILES := $(debuginfo_codeview_SRC_FILES)
 
-LOCAL_MODULE:= libLLVM10DebugInfoCodeView
+LOCAL_MODULE:= libLLVM11DebugInfoCodeView
 
 LOCAL_MODULE_HOST_OS := darwin linux windows
 
-include $(LLVM10_HOST_BUILD_MK)
-include $(LLVM10_GEN_INTRINSICS_MK)
+include $(LLVM11_HOST_BUILD_MK)
+include $(LLVM11_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_STATIC_LIBRARY)
 
 # For the device
@@ -67,9 +67,9 @@ REQUIRES_RTTI := 1
 
 LOCAL_SRC_FILES := $(debuginfo_codeview_SRC_FILES)
 
-LOCAL_MODULE:= libLLVM10DebugInfoCodeView
+LOCAL_MODULE:= libLLVM11DebugInfoCodeView
 
-include $(LLVM10_DEVICE_BUILD_MK)
-include $(LLVM10_GEN_INTRINSICS_MK)
+include $(LLVM11_DEVICE_BUILD_MK)
+include $(LLVM11_GEN_INTRINSICS_MK)
 include $(BUILD_STATIC_LIBRARY)
 endif

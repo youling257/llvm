@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-LLVM10_ROOT_PATH := $(LOCAL_PATH)/../../../
+LLVM11_ROOT_PATH := $(LOCAL_PATH)/../../../
 
 
 #===---------------------------------------------------------------===
@@ -21,11 +21,11 @@ LOCAL_IS_HOST_MODULE := true
 LOCAL_SRC_FILES := $(lli_child_target_SRC_FILES)
 
 LOCAL_STATIC_LIBRARIES := \
-  libLLVM10Support
+  libLLVM11Support
 
 LOCAL_LDLIBS += -lpthread -lm -ldl
 
-include $(LLVM10_ROOT_PATH)/llvm.mk
-include $(LLVM10_HOST_BUILD_MK)
-include $(LLVM10_GEN_INTRINSICS_MK)
+include $(LLVM11_ROOT_PATH)/llvm.mk
+include $(LLVM11_HOST_BUILD_MK)
+include $(LLVM11_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_EXECUTABLE)

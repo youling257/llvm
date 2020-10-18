@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
-LLVM10_ROOT_PATH := $(LOCAL_PATH)/../..
-include $(LLVM10_ROOT_PATH)/llvm.mk
+LLVM11_ROOT_PATH := $(LOCAL_PATH)/../..
+include $(LLVM11_ROOT_PATH)/llvm.mk
 
 tablegen_SRC_FILES := \
   AsmMatcherEmitter.cpp \
@@ -58,7 +58,7 @@ tablegen_SRC_FILES := \
 include $(CLEAR_VARS)
 LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/Android.mk
 
-LOCAL_MODULE := llvm10-tblgen
+LOCAL_MODULE := llvm11-tblgen
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := $(tablegen_SRC_FILES)
 
@@ -66,13 +66,13 @@ REQUIRES_EH := 1
 REQUIRES_RTTI := 1
 
 LOCAL_STATIC_LIBRARIES := \
-  libLLVM10TableGen \
-  libLLVM10Support
+  libLLVM11TableGen \
+  libLLVM11Support
 
 LOCAL_LDLIBS += -lm
 LOCAL_LDLIBS_windows := -limagehlp -lpsapi
 LOCAL_LDLIBS_darwin := -lpthread -ldl
 LOCAL_LDLIBS_linux := -lpthread -ldl
 
-include $(LLVM10_HOST_BUILD_MK)
+include $(LLVM11_HOST_BUILD_MK)
 include $(BUILD_HOST_EXECUTABLE)

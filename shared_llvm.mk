@@ -1,113 +1,113 @@
 LOCAL_PATH:= $(call my-dir)
 
 llvm_pre_static_libraries := \
-  libLLVM10Linker \
-  libLLVM10ipo \
-  libLLVM10DebugInfoDWARF \
-  libLLVM10DebugInfoPDB \
-  libLLVM10Symbolize \
-  libLLVM10DebugInfoMSF \
-  libLLVM10DebugInfoCodeView \
-  libLLVM10Demangle \
-  libLLVM10IRReader \
-  libLLVM10BitWriter \
-  libLLVM10BitReader \
-  libLLVM10BitstreamReader \
-  libLLVM10GlobalISel \
-  libLLVM10Passes
+  libLLVM11Linker \
+  libLLVM11ipo \
+  libLLVM11DebugInfoDWARF \
+  libLLVM11DebugInfoPDB \
+  libLLVM11Symbolize \
+  libLLVM11DebugInfoMSF \
+  libLLVM11DebugInfoCodeView \
+  libLLVM11Demangle \
+  libLLVM11IRReader \
+  libLLVM11BitWriter \
+  libLLVM11BitReader \
+  libLLVM11BitstreamReader \
+  libLLVM11GlobalISel \
+  libLLVM11Passes
 
 llvm_arm_static_libraries := \
-  libLLVM10ARMCodeGen \
-  libLLVM10ARMAsmParser \
-  libLLVM10ARMInfo \
-  libLLVM10ARMDesc \
-  libLLVM10ARMDisassembler \
-  libLLVM10ARMUtils
+  libLLVM11ARMCodeGen \
+  libLLVM11ARMAsmParser \
+  libLLVM11ARMInfo \
+  libLLVM11ARMDesc \
+  libLLVM11ARMDisassembler \
+  libLLVM11ARMUtils
 
 llvm_x86_static_libraries := \
-  libLLVM10X86CodeGen \
-  libLLVM10X86Info \
-  libLLVM10X86Desc \
-  libLLVM10X86AsmParser \
-  libLLVM10X86Utils \
-  libLLVM10X86Disassembler
+  libLLVM11X86CodeGen \
+  libLLVM11X86Info \
+  libLLVM11X86Desc \
+  libLLVM11X86AsmParser \
+  libLLVM11X86Utils \
+  libLLVM11X86Disassembler
 
 ifneq ($(filter radeonsi,$(BOARD_GPU_DRIVERS)),)
 llvm_x86_static_libraries += \
-  libLLVM10AMDGPUCodeGen \
-  libLLVM10AMDGPUInfo \
-  libLLVM10AMDGPUDesc \
-  libLLVM10AMDGPUAsmParser \
-  libLLVM10AMDGPUUtils \
-  libLLVM10AMDGPUDisassembler
+  libLLVM11AMDGPUCodeGen \
+  libLLVM11AMDGPUInfo \
+  libLLVM11AMDGPUDesc \
+  libLLVM11AMDGPUAsmParser \
+  libLLVM11AMDGPUUtils \
+  libLLVM11AMDGPUDisassembler
 endif
 
 llvm_mips_static_libraries := \
-  libLLVM10MipsCodeGen \
-  libLLVM10MipsInfo \
-  libLLVM10MipsDesc \
-  libLLVM10MipsAsmParser \
-  libLLVM10MipsDisassembler
+  libLLVM11MipsCodeGen \
+  libLLVM11MipsInfo \
+  libLLVM11MipsDesc \
+  libLLVM11MipsAsmParser \
+  libLLVM11MipsDisassembler
 
 llvm_aarch64_static_libraries := \
-  libLLVM10AArch64CodeGen \
-  libLLVM10AArch64Info \
-  libLLVM10AArch64Desc \
-  libLLVM10AArch64AsmParser \
-  libLLVM10AArch64Utils \
-  libLLVM10AArch64Disassembler
+  libLLVM11AArch64CodeGen \
+  libLLVM11AArch64Info \
+  libLLVM11AArch64Desc \
+  libLLVM11AArch64AsmParser \
+  libLLVM11AArch64Utils \
+  libLLVM11AArch64Disassembler
 
 llvm_post_static_libraries := \
-  libLLVM10AsmPrinter \
-  libLLVM10SelectionDAG \
-  libLLVM10CodeGen \
-  libLLVM10Object \
-  libLLVM10ScalarOpts \
-  libLLVM10AggressiveInstCombine \
-  libLLVM10InstCombine \
-  libLLVM10Instrumentation \
-  libLLVM10TransformObjCARC \
-  libLLVM10TransformUtils \
-  libLLVM10Analysis \
-  libLLVM10Target \
-  libLLVM10MCDisassembler \
-  libLLVM10MC \
-  libLLVM10MCParser \
-  libLLVM10Core \
-  libLLVM10AsmParser \
-  libLLVM10Option \
-  libLLVM10Support \
-  libLLVM10Vectorize \
-  libLLVM10ProfileData \
-  libLLVM10LibDriver \
-  libLLVM10BinaryFormat \
-  libLLVM10Coroutines \
-  libLLVM10Remarks \
-  libLLVM10MIRParser \
-  libLLVM10TextAPI \
-  libLLVM10CFGuard
+  libLLVM11AsmPrinter \
+  libLLVM11SelectionDAG \
+  libLLVM11CodeGen \
+  libLLVM11Object \
+  libLLVM11ScalarOpts \
+  libLLVM11AggressiveInstCombine \
+  libLLVM11InstCombine \
+  libLLVM11Instrumentation \
+  libLLVM11TransformObjCARC \
+  libLLVM11TransformUtils \
+  libLLVM11Analysis \
+  libLLVM11Target \
+  libLLVM11MCDisassembler \
+  libLLVM11MC \
+  libLLVM11MCParser \
+  libLLVM11Core \
+  libLLVM11AsmParser \
+  libLLVM11Option \
+  libLLVM11Support \
+  libLLVM11Vectorize \
+  libLLVM11ProfileData \
+  libLLVM11LibDriver \
+  libLLVM11BinaryFormat \
+  libLLVM11Coroutines \
+  libLLVM11Remarks \
+  libLLVM11MIRParser \
+  libLLVM11TextAPI \
+  libLLVM11CFGuard
 
 llvm_host_static_libraries := \
-  libLLVM10ExecutionEngine \
-  libLLVM10RuntimeDyld \
-  libLLVM10MCJIT \
-  libLLVM10OrcJIT \
-  libLLVM10OrcError \
-  libLLVM10JITLink
+  libLLVM11ExecutionEngine \
+  libLLVM11RuntimeDyld \
+  libLLVM11MCJIT \
+  libLLVM11OrcJIT \
+  libLLVM11OrcError \
+  libLLVM11JITLink
 
 llvm_device_static_libraries := \
-  libLLVM10ExecutionEngine \
-  libLLVM10RuntimeDyld \
-  libLLVM10MCJIT \
-  libLLVM10OrcJIT \
-  libLLVM10OrcError \
-  libLLVM10JITLink
+  libLLVM11ExecutionEngine \
+  libLLVM11RuntimeDyld \
+  libLLVM11MCJIT \
+  libLLVM11OrcJIT \
+  libLLVM11OrcError \
+  libLLVM11JITLink
 
 # HOST LLVM shared library build
 include $(CLEAR_VARS)
 LOCAL_IS_HOST_MODULE := true
 
-LOCAL_MODULE:= libLLVM10
+LOCAL_MODULE:= libLLVM11
 
 LOCAL_MODULE_TAGS := optional
 
@@ -133,10 +133,10 @@ else
 LOCAL_MODULE_HOST_OS := linux
 endif
 
-include $(LLVM10_HOST_BUILD_MK)
+include $(LLVM11_HOST_BUILD_MK)
 include $(BUILD_HOST_SHARED_LIBRARY)
 
-ifeq (,$(filter $(TARGET_ARCH),$(LLVM10_SUPPORTED_ARCH)))
+ifeq (,$(filter $(TARGET_ARCH),$(LLVM11_SUPPORTED_ARCH)))
 $(warning TODO $(TARGET_ARCH): Enable llvm build)
 endif
 
@@ -144,7 +144,7 @@ ifneq (true,$(DISABLE_LLVM_DEVICE_BUILDS))
 # DEVICE LLVM shared library build
 include $(CLEAR_VARS)
 
-LOCAL_MODULE:= libLLVM10
+LOCAL_MODULE:= libLLVM11
 
 LOCAL_MODULE_TAGS := optional
 
@@ -177,9 +177,9 @@ LOCAL_EXPORT_C_INCLUDE_DIRS := \
   $(LOCAL_PATH)/device/include \
   $(call local-generated-sources-dir)
 
-include $(LLVM10_DEVICE_BUILD_MK)
-include $(LLVM10_GEN_ATTRIBUTES_MK)
-include $(LLVM10_GEN_INTRINSICS_MK)
+include $(LLVM11_DEVICE_BUILD_MK)
+include $(LLVM11_GEN_ATTRIBUTES_MK)
+include $(LLVM11_GEN_INTRINSICS_MK)
 include $(BUILD_SHARED_LIBRARY)
 
 endif

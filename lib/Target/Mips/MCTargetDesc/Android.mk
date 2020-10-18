@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-mips_mc_desc_TBLGEN_TABLES10 := \
+mips_mc_desc_TBLGEN_TABLES11 := \
   MipsGenAsmWriter.inc \
   MipsGenRegisterInfo.inc \
   MipsGenInstrInfo.inc \
@@ -25,40 +25,40 @@ mips_mc_desc_SRC_FILES := \
 # For the host
 # =====================================================
 include $(CLEAR_VARS)
-include $(CLEAR_TBLGEN_VARS10)
+include $(CLEAR_TBLGEN_VARS11)
 
-LOCAL_MODULE:= libLLVM10MipsDesc
+LOCAL_MODULE:= libLLVM11MipsDesc
 LOCAL_MODULE_HOST_OS := darwin linux windows
 
 LOCAL_SRC_FILES := $(mips_mc_desc_SRC_FILES)
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/..
 
-TBLGEN_TD_DIR10 := $(LOCAL_PATH)/..
-TBLGEN_TABLES10 := $(mips_mc_desc_TBLGEN_TABLES10)
+TBLGEN_TD_DIR11 := $(LOCAL_PATH)/..
+TBLGEN_TABLES11 := $(mips_mc_desc_TBLGEN_TABLES11)
 
-include $(LLVM10_HOST_BUILD_MK)
-include $(LLVM10_TBLGEN_RULES_MK)
-include $(LLVM10_GEN_ATTRIBUTES_MK)
-include $(LLVM10_GEN_INTRINSICS_MK)
+include $(LLVM11_HOST_BUILD_MK)
+include $(LLVM11_TBLGEN_RULES_MK)
+include $(LLVM11_GEN_ATTRIBUTES_MK)
+include $(LLVM11_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_STATIC_LIBRARY)
 
 # For the device only
 # =====================================================
 ifneq (true,$(DISABLE_LLVM_DEVICE_BUILDS))
 include $(CLEAR_VARS)
-include $(CLEAR_TBLGEN_VARS10)
+include $(CLEAR_TBLGEN_VARS11)
 
-LOCAL_MODULE:= libLLVM10MipsDesc
+LOCAL_MODULE:= libLLVM11MipsDesc
 
 LOCAL_SRC_FILES := $(mips_mc_desc_SRC_FILES)
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/..
 
-TBLGEN_TD_DIR10 := $(LOCAL_PATH)/..
-TBLGEN_TABLES10 := $(mips_mc_desc_TBLGEN_TABLES10)
+TBLGEN_TD_DIR11 := $(LOCAL_PATH)/..
+TBLGEN_TABLES11 := $(mips_mc_desc_TBLGEN_TABLES11)
 
-include $(LLVM10_DEVICE_BUILD_MK)
-include $(LLVM10_TBLGEN_RULES_MK)
-include $(LLVM10_GEN_ATTRIBUTES_MK)
-include $(LLVM10_GEN_INTRINSICS_MK)
+include $(LLVM11_DEVICE_BUILD_MK)
+include $(LLVM11_TBLGEN_RULES_MK)
+include $(LLVM11_GEN_ATTRIBUTES_MK)
+include $(LLVM11_GEN_INTRINSICS_MK)
 include $(BUILD_STATIC_LIBRARY)
 endif
