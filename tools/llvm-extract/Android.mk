@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-LLVM10_ROOT_PATH := $(LOCAL_PATH)/../..
+LLVM11_ROOT_PATH := $(LOCAL_PATH)/../..
 
 
 #===---------------------------------------------------------------===
@@ -11,17 +11,17 @@ llvm_extract_SRC_FILES := \
   llvm-extract.cpp
 
 llvm_extract_STATIC_LIBRARIES := \
-  libLLVM10IRReader                \
-  libLLVM10AsmParser               \
-  libLLVM10Object                  \
-  libLLVM10BitReader               \
-  libLLVM10BitWriter               \
-  libLLVM10ipo                     \
-  libLLVM10TransformUtils          \
-  libLLVM10Analysis                \
-  libLLVM10Target                  \
-  libLLVM10Core                    \
-  libLLVM10Support                 \
+  libLLVM11IRReader                \
+  libLLVM11AsmParser               \
+  libLLVM11Object                  \
+  libLLVM11BitReader               \
+  libLLVM11BitWriter               \
+  libLLVM11ipo                     \
+  libLLVM11TransformUtils          \
+  libLLVM11Analysis                \
+  libLLVM11Target                  \
+  libLLVM11Core                    \
+  libLLVM11Support                 \
 
 include $(CLEAR_VARS)
 
@@ -36,8 +36,8 @@ LOCAL_STATIC_LIBRARIES := $(llvm_extract_STATIC_LIBRARIES)
 
 LOCAL_LDLIBS += -lpthread -lm -ldl
 
-include $(LLVM10_ROOT_PATH)/llvm.mk
-include $(LLVM10_HOST_BUILD_MK)
-include $(LLVM10_GEN_ATTRIBUTES_MK)
-include $(LLVM10_GEN_INTRINSICS_MK)
+include $(LLVM11_ROOT_PATH)/llvm.mk
+include $(LLVM11_HOST_BUILD_MK)
+include $(LLVM11_GEN_ATTRIBUTES_MK)
+include $(LLVM11_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_EXECUTABLE)
