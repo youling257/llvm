@@ -15,15 +15,15 @@ LOCAL_LDLIBS_darwin := -lpthread -ldl
 LOCAL_LDLIBS_linux := -lpthread -ldl
 
 LOCAL_STATIC_LIBRARIES := \
-  libLLVM10IRReader \
-  libLLVM10BitReader \
-  libLLVM10BitWriter \
-  libLLVM10TransformUtils \
-  libLLVM10Analysis \
-  libLLVM10Core \
-  libLLVM10AsmParser \
-  libLLVM10Support
+  libLLVM11IRReader \
+  libLLVM11BitReader \
+  libLLVM11BitWriter \
+  libLLVM11TransformUtils \
+  libLLVM11Analysis \
+  libLLVM11Core \
+  libLLVM11AsmParser \
+  libLLVM11Support
 
-include $(LLVM10_HOST_BUILD_MK)
-include $(LLVM10_GEN_ATTRIBUTES_MK)
+include $(LLVM11_HOST_BUILD_MK)
+include $(LLVM11_GEN_ATTRIBUTES_MK)
 include $(BUILD_HOST_EXECUTABLE)

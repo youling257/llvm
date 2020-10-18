@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-LLVM10_ROOT_PATH := $(LOCAL_PATH)/../..
+LLVM11_ROOT_PATH := $(LOCAL_PATH)/../..
 
 
 #===---------------------------------------------------------------===
@@ -12,42 +12,42 @@ llvm_mc_SRC_FILES := \
   Disassembler.cpp
 
 llvm_mc_STATIC_LIBRARIES := \
-  libLLVM10ARMAsmParser \
-  libLLVM10ARMInfo \
-  libLLVM10ARMDesc \
-  libLLVM10ARMAsmPrinter \
-  libLLVM10ARMDisassembler \
-  libLLVM10AArch64Info \
-  libLLVM10AArch64AsmParser \
-  libLLVM10AArch64Desc \
-  libLLVM10AArch64AsmPrinter \
-  libLLVM10AArch64Utils \
-  libLLVM10AArch64Disassembler \
-  libLLVM10MipsInfo \
-  libLLVM10MipsAsmParser \
-  libLLVM10MipsDesc \
-  libLLVM10MipsAsmPrinter \
-  libLLVM10MipsDisassembler \
-  libLLVM10X86Info \
-  libLLVM10X86Desc \
-  libLLVM10X86AsmParser \
-  libLLVM10X86AsmPrinter \
-  libLLVM10X86Utils \
-  libLLVM10X86Disassembler \
-  libLLVM10X86CodeGen \
-  libLLVM10AsmPrinter \
-  libLLVM10CodeGen \
-  libLLVM10TransformUtils \
-  libLLVM10Target \
-  libLLVM10Analysis \
-  libLLVM10MC \
-  libLLVM10Object \
-  libLLVM10BitReader \
-  libLLVM10MCParser \
-  libLLVM10Core \
-  libLLVM10AsmParser \
-  libLLVM10Support \
-  libLLVM10MCDisassembler \
+  libLLVM11ARMAsmParser \
+  libLLVM11ARMInfo \
+  libLLVM11ARMDesc \
+  libLLVM11ARMAsmPrinter \
+  libLLVM11ARMDisassembler \
+  libLLVM11AArch64Info \
+  libLLVM11AArch64AsmParser \
+  libLLVM11AArch64Desc \
+  libLLVM11AArch64AsmPrinter \
+  libLLVM11AArch64Utils \
+  libLLVM11AArch64Disassembler \
+  libLLVM11MipsInfo \
+  libLLVM11MipsAsmParser \
+  libLLVM11MipsDesc \
+  libLLVM11MipsAsmPrinter \
+  libLLVM11MipsDisassembler \
+  libLLVM11X86Info \
+  libLLVM11X86Desc \
+  libLLVM11X86AsmParser \
+  libLLVM11X86AsmPrinter \
+  libLLVM11X86Utils \
+  libLLVM11X86Disassembler \
+  libLLVM11X86CodeGen \
+  libLLVM11AsmPrinter \
+  libLLVM11CodeGen \
+  libLLVM11TransformUtils \
+  libLLVM11Target \
+  libLLVM11Analysis \
+  libLLVM11MC \
+  libLLVM11Object \
+  libLLVM11BitReader \
+  libLLVM11MCParser \
+  libLLVM11Core \
+  libLLVM11AsmParser \
+  libLLVM11Support \
+  libLLVM11MCDisassembler \
 
 include $(CLEAR_VARS)
 
@@ -62,7 +62,7 @@ LOCAL_STATIC_LIBRARIES := $(llvm_mc_STATIC_LIBRARIES)
 
 LOCAL_LDLIBS += -lpthread -lm -ldl
 
-include $(LLVM10_ROOT_PATH)/llvm.mk
-include $(LLVM10_HOST_BUILD_MK)
-include $(LLVM10_GEN_INTRINSICS_MK)
+include $(LLVM11_ROOT_PATH)/llvm.mk
+include $(LLVM11_HOST_BUILD_MK)
+include $(LLVM11_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_EXECUTABLE)
