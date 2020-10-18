@@ -1,6 +1,6 @@
 LOCAL_PATH:= $(call my-dir)
-LLVM10_ROOT_PATH := $(LOCAL_PATH)/../..
-include $(LLVM10_ROOT_PATH)/llvm.mk
+LLVM11_ROOT_PATH := $(LOCAL_PATH)/../..
+include $(LLVM11_ROOT_PATH)/llvm.mk
 
 support_SRC_FILES := \
   AArch64TargetParser.cpp \
@@ -138,13 +138,13 @@ REQUIRES_RTTI := 1
 
 LOCAL_SRC_FILES := $(support_SRC_FILES)
 
-LOCAL_MODULE:= libLLVM10Support
+LOCAL_MODULE:= libLLVM11Support
 
 LOCAL_CFLAGS := -D__android__
 
 LOCAL_MODULE_HOST_OS := darwin linux windows
 
-include $(LLVM10_HOST_BUILD_MK)
+include $(LLVM11_HOST_BUILD_MK)
 include $(BUILD_HOST_STATIC_LIBRARY)
 
 # For the device
@@ -154,10 +154,10 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := $(support_SRC_FILES)
 
-LOCAL_MODULE:= libLLVM10Support
+LOCAL_MODULE:= libLLVM11Support
 
 LOCAL_CFLAGS := -D__android__
 
-include $(LLVM10_DEVICE_BUILD_MK)
+include $(LLVM11_DEVICE_BUILD_MK)
 include $(BUILD_STATIC_LIBRARY)
 endif

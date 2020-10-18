@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-LLVM10_ROOT_PATH := $(LOCAL_PATH)/../..
+LLVM11_ROOT_PATH := $(LOCAL_PATH)/../..
 
 
 #===---------------------------------------------------------------===
@@ -11,63 +11,63 @@ llvm_llc_SRC_FILES := \
   llc.cpp
 
 llvm_llc_mips_STATIC_LIBRARIES := \
-  libLLVM10MipsAsmParser \
-  libLLVM10MipsInfo \
-  libLLVM10MipsCodeGen \
-  libLLVM10MipsDesc \
-  libLLVM10MipsAsmPrinter \
+  libLLVM11MipsAsmParser \
+  libLLVM11MipsInfo \
+  libLLVM11MipsCodeGen \
+  libLLVM11MipsDesc \
+  libLLVM11MipsAsmPrinter \
 
 llvm_llc_x86_STATIC_LIBRARIES := \
-  libLLVM10X86Info \
-  libLLVM10X86AsmParser \
-  libLLVM10X86CodeGen \
-  libLLVM10X86Disassembler \
-  libLLVM10X86Desc \
-  libLLVM10X86AsmPrinter \
-  libLLVM10X86Utils
+  libLLVM11X86Info \
+  libLLVM11X86AsmParser \
+  libLLVM11X86CodeGen \
+  libLLVM11X86Disassembler \
+  libLLVM11X86Desc \
+  libLLVM11X86AsmPrinter \
+  libLLVM11X86Utils
 
 llvm_llc_arm_STATIC_LIBRARIES := \
-  libLLVM10ARMCodeGen \
-  libLLVM10ARMDisassembler \
-  libLLVM10ARMAsmParser \
-  libLLVM10ARMAsmPrinter \
-  libLLVM10ARMDesc \
-  libLLVM10ARMInfo
+  libLLVM11ARMCodeGen \
+  libLLVM11ARMDisassembler \
+  libLLVM11ARMAsmParser \
+  libLLVM11ARMAsmPrinter \
+  libLLVM11ARMDesc \
+  libLLVM11ARMInfo
 
 llvm_llc_STATIC_LIBRARIES := \
-  libLLVM10AsmPrinter \
-  libLLVM10IRReader \
-  libLLVM10AsmParser \
-  libLLVM10BitReader \
-  libLLVM10BitWriter \
-  libLLVM10SelectionDAG \
-  libLLVM10InstCombine \
-  libLLVM10CodeGen \
-  libLLVM10Instrumentation \
-  libLLVM10Object \
-  libLLVM10ipo \
-  libLLVM10Linker \
-  libLLVM10MCDisassembler \
-  libLLVM10MC \
-  libLLVM10MIRParser \
-  libLLVM10MCParser \
-  libLLVM10ScalarOpts \
-  libLLVM10TransformUtils \
-  libLLVM10Vectorize \
-  libLLVM10Analysis \
-  libLLVM10Target \
-  libLLVM10Core \
-  libLLVM10Support \
-  libLLVM10Object
+  libLLVM11AsmPrinter \
+  libLLVM11IRReader \
+  libLLVM11AsmParser \
+  libLLVM11BitReader \
+  libLLVM11BitWriter \
+  libLLVM11SelectionDAG \
+  libLLVM11InstCombine \
+  libLLVM11CodeGen \
+  libLLVM11Instrumentation \
+  libLLVM11Object \
+  libLLVM11ipo \
+  libLLVM11Linker \
+  libLLVM11MCDisassembler \
+  libLLVM11MC \
+  libLLVM11MIRParser \
+  libLLVM11MCParser \
+  libLLVM11ScalarOpts \
+  libLLVM11TransformUtils \
+  libLLVM11Vectorize \
+  libLLVM11Analysis \
+  libLLVM11Target \
+  libLLVM11Core \
+  libLLVM11Support \
+  libLLVM11Object
 
 llvm_llc_aarch64_STATIC_LIBRARIES := \
-  libLLVM10AArch64Info \
-  libLLVM10AArch64AsmParser \
-  libLLVM10AArch64CodeGen \
-  libLLVM10AArch64Disassembler \
-  libLLVM10AArch64Desc \
-  libLLVM10AArch64AsmPrinter \
-  libLLVM10AArch64Utils
+  libLLVM11AArch64Info \
+  libLLVM11AArch64AsmParser \
+  libLLVM11AArch64CodeGen \
+  libLLVM11AArch64Disassembler \
+  libLLVM11AArch64Desc \
+  libLLVM11AArch64AsmPrinter \
+  libLLVM11AArch64Utils
 
 
 
@@ -93,10 +93,10 @@ LOCAL_STATIC_LIBRARIES := \
 
 LOCAL_LDLIBS += -lpthread -lm -ldl
 
-include $(LLVM10_ROOT_PATH)/llvm.mk
-include $(LLVM10_HOST_BUILD_MK)
-include $(LLVM10_GEN_ATTRIBUTES_MK)
-include $(LLVM10_GEN_INTRINSICS_MK)
+include $(LLVM11_ROOT_PATH)/llvm.mk
+include $(LLVM11_HOST_BUILD_MK)
+include $(LLVM11_GEN_ATTRIBUTES_MK)
+include $(LLVM11_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_EXECUTABLE)
 
 
@@ -104,7 +104,7 @@ include $(BUILD_HOST_EXECUTABLE)
 # llc command line tool (target)
 #===---------------------------------------------------------------===
 
-ifeq (,$(filter $(TARGET_ARCH),$(LLVM10_SUPPORTED_ARCH)))
+ifeq (,$(filter $(TARGET_ARCH),$(LLVM11_SUPPORTED_ARCH)))
 $(warning TODO $(TARGET_ARCH): Enable llc build)
 endif
 
@@ -128,9 +128,9 @@ LOCAL_STATIC_LIBRARIES_arm64 += $(llvm_llc_arm_STATIC_LIBRARIES)
 
 LOCAL_STATIC_LIBRARIES += $(llvm_llc_STATIC_LIBRARIES)
 
-include $(LLVM10_ROOT_PATH)/llvm.mk
-include $(LLVM10_DEVICE_BUILD_MK)
-include $(LLVM10_GEN_ATTRIBUTES_MK)
-include $(LLVM10_GEN_INTRINSICS_MK)
+include $(LLVM11_ROOT_PATH)/llvm.mk
+include $(LLVM11_DEVICE_BUILD_MK)
+include $(LLVM11_GEN_ATTRIBUTES_MK)
+include $(LLVM11_GEN_INTRINSICS_MK)
 include $(BUILD_EXECUTABLE)
 endif

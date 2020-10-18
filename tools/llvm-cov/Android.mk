@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-LLVM10_ROOT_PATH := $(LOCAL_PATH)/../..
+LLVM11_ROOT_PATH := $(LOCAL_PATH)/../..
 
 
 #===---------------------------------------------------------------===
@@ -18,13 +18,13 @@ llvm_cov_SRC_FILES := \
   TestingSupport.cpp
 
 llvm_cov_STATIC_LIBRARIES := \
-  libLLVM10Object              \
-  libLLVM10ProfileData         \
-  libLLVM10MC                  \
-  libLLVM10MCParser            \
-  libLLVM10BitReader           \
-  libLLVM10Core                \
-  libLLVM10Support             \
+  libLLVM11Object              \
+  libLLVM11ProfileData         \
+  libLLVM11MC                  \
+  libLLVM11MCParser            \
+  libLLVM11BitReader           \
+  libLLVM11Core                \
+  libLLVM11Support             \
 
 include $(CLEAR_VARS)
 
@@ -39,7 +39,7 @@ LOCAL_STATIC_LIBRARIES := $(llvm_cov_STATIC_LIBRARIES)
 
 LOCAL_LDLIBS += -lpthread -lm -ldl
 
-include $(LLVM10_ROOT_PATH)/llvm.mk
-include $(LLVM10_HOST_BUILD_MK)
-include $(LLVM10_GEN_INTRINSICS_MK)
+include $(LLVM11_ROOT_PATH)/llvm.mk
+include $(LLVM11_HOST_BUILD_MK)
+include $(LLVM11_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_EXECUTABLE)

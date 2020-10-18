@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-LLVM10_ROOT_PATH := $(LOCAL_PATH)/../..
+LLVM11_ROOT_PATH := $(LOCAL_PATH)/../..
 
 
 #===---------------------------------------------------------------===
@@ -19,27 +19,27 @@ bugpoint_SRC_FILES := \
   bugpoint.cpp        \
 
 bugpoint_STATIC_LIBRARIES := \
-  libLLVM10BitWriter \
-  libLLVM10CodeGen \
-  libLLVM10ipo \
-  libLLVM10IRReader \
-  libLLVM10BitReader \
-  libLLVM10AsmParser \
-  libLLVM10InstCombine \
-  libLLVM10Instrumentation \
-  libLLVM10Linker \
-  libLLVM10TransformObjCARC \
-  libLLVM10Object \
-  libLLVM10ScalarOpts \
-  libLLVM10TransformUtils \
-  libLLVM10Analysis \
-  libLLVM10Target \
-  libLLVM10Core \
-  libLLVM10MC \
-  libLLVM10MCParser \
-  libLLVM10ProfileData \
-  libLLVM10Vectorize \
-  libLLVM10Support \
+  libLLVM11BitWriter \
+  libLLVM11CodeGen \
+  libLLVM11ipo \
+  libLLVM11IRReader \
+  libLLVM11BitReader \
+  libLLVM11AsmParser \
+  libLLVM11InstCombine \
+  libLLVM11Instrumentation \
+  libLLVM11Linker \
+  libLLVM11TransformObjCARC \
+  libLLVM11Object \
+  libLLVM11ScalarOpts \
+  libLLVM11TransformUtils \
+  libLLVM11Analysis \
+  libLLVM11Target \
+  libLLVM11Core \
+  libLLVM11MC \
+  libLLVM11MCParser \
+  libLLVM11ProfileData \
+  libLLVM11Vectorize \
+  libLLVM11Support \
 
 include $(CLEAR_VARS)
 
@@ -55,8 +55,8 @@ LOCAL_LDLIBS += -lpthread -lm -ldl
 LOCAL_LDFLAGS_darwin := -Wl,-export_dynamic
 LOCAL_LDFLAGS_linux := -Wl,--export-dynamic
 
-include $(LLVM10_ROOT_PATH)/llvm.mk
-include $(LLVM10_HOST_BUILD_MK)
-include $(LLVM10_GEN_ATTRIBUTES_MK)
-include $(LLVM10_GEN_INTRINSICS_MK)
+include $(LLVM11_ROOT_PATH)/llvm.mk
+include $(LLVM11_HOST_BUILD_MK)
+include $(LLVM11_GEN_ATTRIBUTES_MK)
+include $(LLVM11_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_EXECUTABLE)
