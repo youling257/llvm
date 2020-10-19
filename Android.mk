@@ -113,8 +113,7 @@ subdirs += \
   lib/Target/X86/AsmParser \
   lib/Target/X86/Disassembler \
   lib/Target/X86/MCTargetDesc \
-  lib/Target/X86/TargetInfo \
-  lib/Target/X86/Utils
+  lib/Target/X86/TargetInfo
 
 ifneq ($(filter radeonsi,$(BOARD_GPU_DRIVERS)),)
 # AMDGPU Code Generation Libraries
