@@ -29,7 +29,6 @@ llvm_x86_static_libraries := \
   libLLVM11X86Info \
   libLLVM11X86Desc \
   libLLVM11X86AsmParser \
-  libLLVM11X86Utils \
   libLLVM11X86Disassembler
 
 ifneq ($(filter radeonsi,$(BOARD_GPU_DRIVERS)),)
