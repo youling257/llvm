@@ -8,7 +8,9 @@ jitlink_SRC_FILES := \
   MachO.cpp \
   MachO_arm64.cpp \
   MachO_x86_64.cpp \
-  MachOLinkGraphBuilder.cpp
+  MachOLinkGraphBuilder.cpp \
+  ELF.cpp \
+  ELF_x86_64.cpp
 
 # For the host
 # =====================================================

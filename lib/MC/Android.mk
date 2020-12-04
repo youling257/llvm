@@ -25,6 +25,7 @@ mc_SRC_FILES := \
   MCInstPrinter.cpp \
   MCInstrAnalysis.cpp \
   MCInstrDesc.cpp \
+  MCInstrInfo.cpp \
   MCLabel.cpp \
   MCLinkerOptimizationHint.cpp \
   MCMachOStreamer.cpp \
@@ -45,7 +46,9 @@ mc_SRC_FILES := \
   MCSubtargetInfo.cpp \
   MCSymbol.cpp \
   MCSymbolELF.cpp \
+  MCSymbolXCOFF.cpp \
   MCTargetOptions.cpp \
+  MCTargetOptionsCommandFlags.cpp \
   MCValue.cpp \
   MCWasmObjectTargetWriter.cpp \
   MCWasmStreamer.cpp \
