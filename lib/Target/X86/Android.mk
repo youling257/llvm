@@ -49,10 +49,12 @@ x86_codegen_SRC_FILES := \
   X86MacroFusion.cpp \
   X86OptimizeLEAs.cpp \
   X86PadShortFunction.cpp \
+  X86PartialReduction.cpp \
   X86RegisterInfo.cpp \
   X86SelectionDAGInfo.cpp \
   X86ShuffleDecodeConstantPool.cpp \
   X86SpeculativeLoadHardening.cpp \
+  X86SpeculativeExecutionSideEffectSuppression.cpp \
   X86Subtarget.cpp \
   X86TargetMachine.cpp \
   X86TargetObjectFile.cpp \
@@ -60,6 +62,7 @@ x86_codegen_SRC_FILES := \
   X86VZeroUpper.cpp \
   X86WinAllocaExpander.cpp \
   X86WinEHState.cpp \
+  X86InsertWait.cpp
 
 ifeq ($(FORCE_BUILD_LLVM_GLOBAL_ISEL),true)
 x86_codegen_TBLGEN_TABLES11 += \

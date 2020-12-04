@@ -3,6 +3,7 @@ LOCAL_PATH:= $(call my-dir)
 binary_format_SRC_FILES := \
   AMDGPUMetadataVerifier.cpp \
   Dwarf.cpp \
+  MachO.cpp \
   Magic.cpp \
   Minidump.cpp \
   MsgPackDocument.cpp \

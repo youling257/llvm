@@ -10,12 +10,14 @@ codegen_SRC_FILES := \
   BranchRelaxation.cpp \
   BreakFalseDeps.cpp \
   BuiltinGCs.cpp \
+  BBSectionsPrepare.cpp \
   CalcSpillWeights.cpp \
   CallingConvLower.cpp \
   CFGuardLongjmp.cpp \
   CFIInstrInserter.cpp \
   CodeGen.cpp \
   CodeGenPrepare.cpp \
+  CommandFlags.cpp \
   CriticalAntiDepBreaker.cpp \
   DeadMachineInstructionElim.cpp \
   DetectDeadLanes.cpp \
@@ -30,6 +32,7 @@ codegen_SRC_FILES := \
   FaultMaps.cpp \
   FEntryInserter.cpp \
   FinalizeISel.cpp \
+  FixupStatepointCallerSaved.cpp \
   FuncletLayout.cpp \
   GCMetadata.cpp \
   GCMetadataPrinter.cpp \
@@ -55,6 +58,7 @@ codegen_SRC_FILES := \
   LiveIntervalUnion.cpp \
   LivePhysRegs.cpp \
   LiveRangeCalc.cpp \
+  LiveIntervalCalc.cpp \
   LiveRangeEdit.cpp \
   LiveRangeShrink.cpp \
   LiveRegMatrix.cpp \
@@ -73,6 +77,7 @@ codegen_SRC_FILES := \
   MachineCombiner.cpp \
   MachineCopyPropagation.cpp \
   MachineCSE.cpp \
+  MachineDebugify.cpp \
   MachineDominanceFrontier.cpp \
   MachineDominators.cpp \
   MachineFrameInfo.cpp \
@@ -97,10 +102,12 @@ codegen_SRC_FILES := \
   MachineSink.cpp \
   MachineSizeOpts.cpp \
   MachineSSAUpdater.cpp \
+  MachineStripDebug.cpp \
   MachineTraceMetrics.cpp \
   MachineVerifier.cpp \
   ModuloSchedule.cpp \
   PatchableFunction.cpp \
+  MBFIWrapper.cpp \
   MIRPrinter.cpp \
   MIRPrintingPass.cpp \
   MacroFusion.cpp \
@@ -138,7 +145,6 @@ codegen_SRC_FILES := \
   RegUsageInfoPropagate.cpp \
   ResetMachineFunctionPass.cpp \
   SafeStack.cpp \
-  SafeStackColoring.cpp \
   SafeStackLayout.cpp \
   ScalarizeMaskedMemIntrin.cpp \
   ScheduleDAG.cpp \

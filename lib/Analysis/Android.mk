@@ -6,6 +6,7 @@ analysis_SRC_FILES := \
   AliasAnalysisSummary.cpp \
   AliasSetTracker.cpp \
   Analysis.cpp \
+  AssumeBundleQueries.cpp \
   AssumptionCache.cpp \
   BasicAliasAnalysis.cpp \
   BlockFrequencyInfo.cpp \
@@ -36,10 +37,14 @@ analysis_SRC_FILES := \
   EHPersonalities.cpp \
   GlobalsModRef.cpp \
   GuardUtils.cpp \
+  HeatUtils.cpp \
   IVDescriptors.cpp \
   IVUsers.cpp \
   IndirectCallPromotionAnalysis.cpp \
   InlineCost.cpp \
+  InlineAdvisor.cpp \
+  InlineFeaturesAnalysis.cpp \
+  InlineSizeEstimatorAnalysis.cpp \
   InstCount.cpp \
   InstructionPrecedenceTracking.cpp \
   InstructionSimplify.cpp \
@@ -55,6 +60,7 @@ analysis_SRC_FILES := \
   LoopAccessAnalysis.cpp \
   LoopAnalysisManager.cpp \
   LoopCacheAnalysis.cpp \
+  LoopNestAnalysis.cpp \
   LoopUnrollAnalyzer.cpp \
   LoopInfo.cpp \
   LoopPass.cpp \
@@ -72,8 +78,6 @@ analysis_SRC_FILES := \
   ObjCARCAnalysisUtils.cpp \
   ObjCARCInstKind.cpp \
   OptimizationRemarkEmitter.cpp \
-  OrderedBasicBlock.cpp \
-  OrderedInstructions.cpp \
   PHITransAddr.cpp \
   PhiValues.cpp \
   PostDominators.cpp \
@@ -84,8 +88,9 @@ analysis_SRC_FILES := \
   RegionPrinter.cpp \
   ScalarEvolution.cpp \
   ScalarEvolutionAliasAnalysis.cpp \
-  ScalarEvolutionExpander.cpp \
+  ScalarEvolutionDivision.cpp \
   ScalarEvolutionNormalization.cpp \
+  StackLifetime.cpp \
   StackSafetyAnalysis.cpp \
   SyncDependenceAnalysis.cpp \
   SyntheticCountsUtils.cpp \

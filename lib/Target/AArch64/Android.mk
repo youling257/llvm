@@ -41,12 +41,13 @@ aarch64_codegen_SRC_FILES := \
   AArch64ISelLowering.cpp \
   AArch64InstrInfo.cpp \
   AArch64LoadStoreOptimizer.cpp \
+  AArch64MachineFunctionInfo.cpp \
   AArch64MacroFusion.cpp \
   AArch64MCInstLower.cpp \
-  AArch64PreLegalizerCombiner.cpp \
   AArch64PromoteConstant.cpp \
   AArch64PBQPRegAlloc.cpp \
   AArch64RegisterInfo.cpp \
+  AArch64SLSHardening.cpp \
   AArch64SelectionDAGInfo.cpp \
   AArch64SpeculationHardening.cpp \
   AArch64StackTagging.cpp \
@@ -56,6 +57,7 @@ aarch64_codegen_SRC_FILES := \
   AArch64TargetMachine.cpp \
   AArch64TargetObjectFile.cpp \
   AArch64TargetTransformInfo.cpp \
+  SVEIntrinsicOpts.cpp \
   AArch64SIMDInstrOpt.cpp
 
 ifeq ($(FORCE_BUILD_LLVM_GLOBAL_ISEL),true)
@@ -64,10 +66,12 @@ aarch64_codegen_TBLGEN_TABLES11 += \
   AArch64GenGlobalISel.inc
 
 aarch64_codegen_SRC_FILES += \
-  AArch64CallLowering.cpp \
-  AArch64InstructionSelector.cpp \
-  AArch64LegalizerInfo.cpp \
-  AArch64RegisterBankInfo.cpp
+  GISel/AArch64CallLowering.cpp \
+  GISel/AArch64InstructionSelector.cpp \
+  GISel/AArch64LegalizerInfo.cpp \
+  GISel/AArch64PreLegalizerCombiner.cpp \
+  GISel/AArch64PostLegalizerCombiner.cpp \
+  GISel/AArch64RegisterBankInfo.cpp
 endif
 
 # For the host

@@ -1,14 +1,18 @@
 LOCAL_PATH:= $(call my-dir)
 
 transforms_utils_SRC_FILES := \
-  ASanStackFrameLayout.cpp \
   AddDiscriminators.cpp \
+  AMDGPUEmitPrintf.cpp \
+  ASanStackFrameLayout.cpp \
+  AssumeBundleBuilder.cpp \
   BasicBlockUtils.cpp \
   BreakCriticalEdges.cpp \
   BuildLibCalls.cpp \
   BypassSlowDivision.cpp \
   CallPromotionUtils.cpp \
+  CallGraphUpdater.cpp \
   CanonicalizeAliases.cpp \
+  CanonicalizeFreezeInLoops.cpp \
   CloneFunction.cpp \
   CloneModule.cpp \
   CodeExtractor.cpp \
@@ -19,6 +23,7 @@ transforms_utils_SRC_FILES := \
   EntryExitInstrumenter.cpp \
   EscapeEnumerator.cpp \
   Evaluator.cpp \
+  FixIrreducible.cpp \
   FlattenCFG.cpp \
   FunctionComparator.cpp \
   FunctionImportUtils.cpp \
@@ -50,6 +55,7 @@ transforms_utils_SRC_FILES := \
   NameAnonGlobals.cpp \
   PredicateInfo.cpp \
   PromoteMemoryToRegister.cpp \
+  ScalarEvolutionExpander.cpp \
   StripGCRelocates.cpp \
   SSAUpdater.cpp \
   SSAUpdaterBulk.cpp \
@@ -62,6 +68,8 @@ transforms_utils_SRC_FILES := \
   StripNonLineTableDebugInfo.cpp \
   SymbolRewriter.cpp \
   UnifyFunctionExitNodes.cpp \
+  UnifyLoopExits.cpp \
+  UniqueInternalLinkageNames.cpp \
   Utils.cpp \
   ValueMapper.cpp \
   VNCoercion.cpp

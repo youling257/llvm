@@ -13,6 +13,7 @@ transforms_inst_combine_SRC_FILES := \
   InstCombineCompares.cpp \
   InstCombineLoadStoreAlloca.cpp \
   InstCombineMulDivRem.cpp \
+  InstCombineNegator.cpp \
   InstCombinePHI.cpp \
   InstCombineSelect.cpp \
   InstCombineShifts.cpp \
