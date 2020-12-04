@@ -38,6 +38,7 @@ subdirs := \
   lib/ExecutionEngine/OrcError \
   lib/ExecutionEngine/Interpreter \
   lib/Fuzzer \
+  lib/Frontend/OpenMP \
   lib/CodeGen \
   lib/CodeGen/AsmPrinter \
   lib/CodeGen/MIRParser \
