@@ -188,11 +188,18 @@ $(generated_sources)/%GenGlobalISel.inc: $(tblgen_source_dir)/%.td \
 	$(call transform-td-to-out11,global-isel)
 endif
 
-ifneq ($(filter %GenGICombiner.inc,$(tblgen_gen_tables)),)
-$(generated_sources)/%GenGICombiner.inc: TBLGEN_LOCAL_MODULE := $(LOCAL_MODULE)
-$(generated_sources)/%GenGICombiner.inc: $(tblgen_source_dir)/%.td \
+ifneq ($(findstring AArch64GenPreLegalizeGICombiner.inc,$(tblgen_gen_tables)),)
+$(generated_sources)/AArch64GenPreLegalizeGICombiner.inc: TBLGEN_LOCAL_MODULE := $(LOCAL_MODULE)
+$(generated_sources)/AArch64GenPreLegalizeGICombiner.inc: $(tblgen_source_dir)/AArch64.td \
                                    $(tblgen_td_deps) $(LLVM11_TBLGEN)
 	$(call transform-td-to-out11,global-isel-combiner -combiners="AArch64PreLegalizerCombinerHelper")
+endif
+
+ifneq ($(findstring AArch64GenPostLegalizeGICombiner.inc,$(tblgen_gen_tables)),)
+$(generated_sources)/AArch64GenPostLegalizeGICombiner.inc: TBLGEN_LOCAL_MODULE := $(LOCAL_MODULE)
+$(generated_sources)/AArch64GenPostLegalizeGICombiner.inc: $(tblgen_source_dir)/AArch64.td \
+                                   $(tblgen_td_deps) $(LLVM11_TBLGEN)
+	$(call transform-td-to-out11,global-isel-combiner -combiners="AArch64PostLegalizerCombinerHelper")
 endif
 
 ifneq ($(filter %GenSubtargetInfo.inc,$(tblgen_gen_tables)),)
