@@ -11,7 +11,8 @@ aarch64_codegen_TBLGEN_TABLES11 := \
   AArch64GenSubtargetInfo.inc \
   AArch64GenMCCodeEmitter.inc \
   AArch64GenFastISel.inc \
-  AArch64GenGICombiner.inc \
+  AArch64GenPreLegalizeGICombiner.inc \
+  AArch64GenPostLegalizeGICombiner.inc \
   AArch64GenDisassemblerTables.inc \
   AArch64GenMCPseudoLowering.inc \
   AArch64GenSystemOperands.inc \
