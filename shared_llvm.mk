@@ -84,7 +84,8 @@ llvm_post_static_libraries := \
   libLLVM11Remarks \
   libLLVM11MIRParser \
   libLLVM11TextAPI \
-  libLLVM11CFGuard
+  libLLVM11CFGuard \
+  libLLVM11FrontendOpenMP
 
 llvm_host_static_libraries := \
   libLLVM11ExecutionEngine \
