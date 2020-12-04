@@ -15,6 +15,7 @@ amdgpu_codegen_TBLGEN_TABLES11 := \
   AMDGPUGenMCPseudoLowering.inc \
   AMDGPUGenSearchableTables.inc \
   AMDGPUGenGlobalISel.inc \
+  AMDGPUGenPreLegalizeGICombiner.inc \
   R600GenAsmWriter.inc \
   R600GenCallingConv.inc \
   R600GenDAGISel.inc \
