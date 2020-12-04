@@ -209,6 +209,13 @@ $(generated_sources)/AMDGPUGenPreLegalizeGICombiner.inc: $(tblgen_source_dir)/AM
 	$(call transform-td-to-out11,global-isel-combiner -combiners="AMDGPUPreLegalizerCombinerHelper")
 endif
 
+ifneq ($(findstring AMDGPUGenPostLegalizeGICombiner.inc,$(tblgen_gen_tables)),)
+$(generated_sources)/AMDGPUGenPostLegalizeGICombiner.inc: TBLGEN_LOCAL_MODULE := $(LOCAL_MODULE)
+$(generated_sources)/AMDGPUGenPostLegalizeGICombiner.inc: $(tblgen_source_dir)/AMDGPUGISel.td \
+                                   $(tblgen_td_deps) $(LLVM11_TBLGEN)
+	$(call transform-td-to-out11,global-isel-combiner -combiners="AMDGPUPostLegalizerCombinerHelper")
+endif
+
 ifneq ($(filter %GenSubtargetInfo.inc,$(tblgen_gen_tables)),)
 $(generated_sources)/%GenSubtargetInfo.inc: TBLGEN_LOCAL_MODULE := $(LOCAL_MODULE)
 $(generated_sources)/%GenSubtargetInfo.inc: $(tblgen_source_dir)/%.td \
