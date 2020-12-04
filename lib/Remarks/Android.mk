@@ -8,6 +8,7 @@ remarks_SRC_FILES := \
   RemarkLinker.cpp \
   RemarkParser.cpp \
   RemarkSerializer.cpp \
+  RemarkStreamer.cpp \
   RemarkStringTable.cpp \
   YAMLRemarkParser.cpp \
   YAMLRemarkSerializer.cpp

@@ -32,6 +32,7 @@ vmcore_SRC_FILES := \
   IntrinsicInst.cpp \
   LLVMContext.cpp \
   LLVMContextImpl.cpp \
+  LLVMRemarkStreamer.cpp \
   LegacyPassManager.cpp \
   MDBuilder.cpp \
   Mangler.cpp \
@@ -45,7 +46,6 @@ vmcore_SRC_FILES := \
   PassManager.cpp \
   PassRegistry.cpp \
   PassTimingInfo.cpp \
-  RemarkStreamer.cpp \
   SafepointIRVerifier.cpp \
   ProfileSummary.cpp \
   Statepoint.cpp \

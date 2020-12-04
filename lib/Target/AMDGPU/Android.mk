@@ -33,6 +33,7 @@ amdgpu_codegen_SRC_FILES := \
   AMDGPUAsmPrinter.cpp \
   AMDGPUAtomicOptimizer.cpp \
   AMDGPUCodeGenPrepare.cpp \
+  AMDGPUExportClustering.cpp \
   AMDGPUFixFunctionBitcasts.cpp \
   AMDGPUFrameLowering.cpp \
   AMDGPUHSAMetadataStreamer.cpp \
@@ -51,9 +52,11 @@ amdgpu_codegen_SRC_FILES := \
   AMDGPUMacroFusion.cpp \
   AMDGPUMCInstLower.cpp \
   AMDGPUOpenCLEnqueuedBlockLowering.cpp \
+  AMDGPUPostLegalizerCombiner.cpp \
+  AMDGPUPreLegalizerCombiner.cpp \
   AMDGPUPromoteAlloca.cpp \
   AMDGPUPropagateAttributes.cpp \
-  AMDGPURegisterInfo.cpp \
+  AMDGPURegBankCombiner.cpp \
   AMDGPURewriteOutArguments.cpp \
   AMDGPUSubtarget.cpp \
   AMDGPUTargetMachine.cpp \
@@ -93,6 +96,7 @@ amdgpu_codegen_SRC_FILES := \
   SIFoldOperands.cpp \
   SIFormMemoryClauses.cpp \
   SIFrameLowering.cpp \
+  SIInsertHardClauses.cpp \
   SIInsertSkips.cpp \
   SIInsertWaitcnts.cpp \
   SIInstrInfo.cpp \
@@ -107,7 +111,10 @@ amdgpu_codegen_SRC_FILES := \
   SIOptimizeExecMasking.cpp \
   SIOptimizeExecMaskingPreRA.cpp \
   SIPeepholeSDWA.cpp \
+  SIPostRABundler.cpp \
+  SIPreEmitPeephole.cpp \
   SIRegisterInfo.cpp \
+  SIRemoveShortExecBranches.cpp \
   SIShrinkInstructions.cpp \
   SIWholeQuadMode.cpp \
   GCNILPSched.cpp \

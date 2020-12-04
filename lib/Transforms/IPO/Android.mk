@@ -4,6 +4,7 @@ transforms_ipo_SRC_FILES := \
   AlwaysInliner.cpp \
   ArgumentPromotion.cpp \
   Attributor.cpp \
+  AttributorAttributes.cpp \
   BarrierNoopPass.cpp \
   BlockExtractor.cpp \
   CalledValuePropagation.cpp \
@@ -28,6 +29,7 @@ transforms_ipo_SRC_FILES := \
   LoopExtractor.cpp \
   LowerTypeTests.cpp \
   MergeFunctions.cpp \
+  OpenMPOpt.cpp \
   PartialInlining.cpp \
   PassManagerBuilder.cpp \
   PruneEH.cpp \
