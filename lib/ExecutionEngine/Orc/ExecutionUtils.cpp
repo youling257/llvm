@@ -287,7 +287,7 @@ StaticLibraryDefinitionGenerator::Load(ObjectLayer &L, const char *FileName,
 
   // If this is a regular archive then create an instance from it.
   if (isa<object::Archive>(B->getBinary()))
-    return Create(L, std::move(B->takeBinary().second));
+    return Create(L, B->takeBinary().second);
 
   // If this is a universal binary then search for a slice matching the given
   // Triple.
