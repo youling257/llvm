@@ -4,12 +4,14 @@ mc_parser_SRC_FILES := \
   AsmLexer.cpp \
   AsmParser.cpp \
   COFFAsmParser.cpp \
+  COFFMasmParser.cpp \
   DarwinAsmParser.cpp \
   ELFAsmParser.cpp \
   MCAsmLexer.cpp \
   MCAsmParser.cpp \
   MCAsmParserExtension.cpp \
   MCTargetAsmParser.cpp \
+  MasmParser.cpp \
   WasmAsmParser.cpp
 
 # For the host

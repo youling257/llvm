@@ -6,6 +6,7 @@ transforms_vectorize_SRC_FILES := \
   LoopVectorize.cpp \
   SLPVectorizer.cpp \
   Vectorize.cpp \
+  VectorCombine.cpp \
   VPlan.cpp \
   VPlanHCFGBuilder.cpp \
   VPlanPredicator.cpp \

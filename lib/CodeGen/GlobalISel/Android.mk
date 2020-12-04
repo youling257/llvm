@@ -13,6 +13,7 @@ global_isel_SRC_FILES += \
       CombinerHelper.cpp \
       GISelChangeObserver.cpp \
       IRTranslator.cpp \
+      InlineAsmLowering.cpp \
       InstructionSelect.cpp \
       InstructionSelector.cpp \
       LegalityPredicates.cpp \
@@ -21,6 +22,7 @@ global_isel_SRC_FILES += \
       LegalizerHelper.cpp \
       LegalizerInfo.cpp \
       Localizer.cpp \
+      LostDebugLocObserver.cpp \
       MachineIRBuilder.cpp \
       RegBankSelect.cpp \
       RegisterBank.cpp \

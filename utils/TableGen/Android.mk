@@ -23,6 +23,7 @@ tablegen_SRC_FILES := \
   DAGISelMatcher.cpp \
   DFAEmitter.cpp \
   DFAPacketizerEmitter.cpp \
+  DirectiveEmitter.cpp \
   DisassemblerEmitter.cpp \
   ExegesisEmitter.cpp \
   FastISelEmitter.cpp \
@@ -53,7 +54,15 @@ tablegen_SRC_FILES := \
   X86ModRMFilters.cpp \
   X86RecognizableInstr.cpp \
   WebAssemblyDisassemblerEmitter.cpp \
-  CTagsEmitter.cpp
+  CTagsEmitter.cpp \
+  GlobalISel/CodeExpander.cpp \
+  GlobalISel/GIMatchDag.cpp \
+  GlobalISel/GIMatchDagEdge.cpp \
+  GlobalISel/GIMatchDagInstr.cpp \
+  GlobalISel/GIMatchDagOperands.cpp \
+  GlobalISel/GIMatchDagPredicate.cpp \
+  GlobalISel/GIMatchDagPredicateDependencyEdge.cpp \
+  GlobalISel/GIMatchTree.cpp
 
 include $(CLEAR_VARS)
 LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/Android.mk

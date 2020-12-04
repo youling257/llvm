@@ -38,8 +38,11 @@ support_SRC_FILES := \
   DeltaAlgorithm.cpp \
   DAGDeltaAlgorithm.cpp \
   DJB.cpp \
+  ELFAttributeParser.cpp \
+  ELFAttributes.cpp \
   Error.cpp \
   ErrorHandling.cpp \
+  ExtensibleRTTI.cpp \
   FileCheck.cpp \
   FileCollector.cpp \
   FileUtilities.cpp \
@@ -63,15 +66,19 @@ support_SRC_FILES := \
   LowLevelType.cpp \
   ManagedStatic.cpp \
   MathExtras.cpp \
+  MemAlloc.cpp \
   MemoryBuffer.cpp \
   MD5.cpp \
   NativeFormatting.cpp \
+  OptimizedStructLayout.cpp \
   Optional.cpp \
   Parallel.cpp \
   PluginLoader.cpp \
   PrettyStackTrace.cpp \
   RandomNumberGenerator.cpp \
   Regex.cpp \
+  RISCVAttributes.cpp \
+  RISCVAttributeParser.cpp \
   ScaledNumber.cpp \
   ScopedPrinter.cpp \
   SHA1.cpp \
@@ -83,9 +90,9 @@ support_SRC_FILES := \
   Statistic.cpp \
   StringExtras.cpp \
   StringMap.cpp \
-  StringPool.cpp \
   StringSaver.cpp \
   StringRef.cpp \
+  SuffixTree.cpp \
   SymbolRemappingReader.cpp \
   SystemUtils.cpp \
   TarWriter.cpp \
@@ -102,6 +109,7 @@ support_SRC_FILES := \
   VersionTuple.cpp \
   VirtualFileSystem.cpp \
   WithColor.cpp \
+  X86TargetParser.cpp \
   YAMLParser.cpp \
   YAMLTraits.cpp \
   raw_os_ostream.cpp \
