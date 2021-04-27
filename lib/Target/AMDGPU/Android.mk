@@ -24,7 +24,8 @@ amdgpu_codegen_TBLGEN_TABLES12 := \
   R600GenInstrInfo.inc \
   R600GenMCCodeEmitter.inc \
   R600GenRegisterInfo.inc \
-  R600GenSubtargetInfo.inc
+  R600GenSubtargetInfo.inc \
+  InstCombineTables.inc
 
 amdgpu_codegen_SRC_FILES := \
   AMDGPUAliasAnalysis.cpp \
