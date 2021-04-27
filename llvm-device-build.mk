@@ -61,6 +61,8 @@ LOCAL_CPPFLAGS :=	\
 	-Wno-sign-compare	\
 	-Wno-sign-promo         \
 	-Wno-unused-variable	\
+	-Wno-missing-braces -Wmissing-field-initializers \
+	-Wno-tautological-compare \
 	-std=c++14
 
 # Make sure bionic is first so we can include system headers.
