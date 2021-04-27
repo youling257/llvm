@@ -1,15 +1,16 @@
 LOCAL_PATH:= $(call my-dir)
 
-orcerror_SRC_FILES := \
+orcshared_SRC_FILES := \
   OrcError.cpp \
-  RPCError.cpp
+  RPCError.cpp \
+  TargetProcessControlTypes.cpp
 
 # For the host
 # =====================================================
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := $(orcerror_SRC_FILES)
-LOCAL_MODULE := libLLVM12OrcError
+LOCAL_SRC_FILES := $(orcshared_SRC_FILES)
+LOCAL_MODULE := libLLVM12OrcShared
 
 LOCAL_MODULE_HOST_OS := darwin linux windows
 
@@ -23,8 +24,8 @@ include $(BUILD_HOST_STATIC_LIBRARY)
 ifneq (true,$(DISABLE_LLVM_DEVICE_BUILDS))
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := $(orcerror_SRC_FILES)
-LOCAL_MODULE := libLLVM12OrcError
+LOCAL_SRC_FILES := $(orcshared_SRC_FILES)
+LOCAL_MODULE := libLLVM12OrcShared
 
 include $(LLVM12_DEVICE_BUILD_MK)
 include $(LLVM12_GEN_ATTRIBUTES_MK)
