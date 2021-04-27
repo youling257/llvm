@@ -202,6 +202,13 @@ $(generated_sources)/AArch64GenPostLegalizeGICombiner.inc: $(tblgen_source_dir)/
 	$(call transform-td-to-out12,global-isel-combiner -combiners="AArch64PostLegalizerCombinerHelper")
 endif
 
+ifneq ($(findstring AArch64GenPostLegalizeGILowering.inc,$(tblgen_gen_tables)),)
+$(generated_sources)/AArch64GenPostLegalizeGILowering.inc: TBLGEN_LOCAL_MODULE := $(LOCAL_MODULE)
+$(generated_sources)/AArch64GenPostLegalizeGILowering.inc: $(tblgen_source_dir)/AArch64.td \
+                                   $(tblgen_td_deps) $(LLVM12_TBLGEN)
+	$(call transform-td-to-out12,global-isel-combiner -combiners="AArch64PostLegalizerLoweringHelper")
+endif
+
 ifneq ($(findstring AMDGPUGenPreLegalizeGICombiner.inc,$(tblgen_gen_tables)),)
 $(generated_sources)/AMDGPUGenPreLegalizeGICombiner.inc: TBLGEN_LOCAL_MODULE := $(LOCAL_MODULE)
 $(generated_sources)/AMDGPUGenPreLegalizeGICombiner.inc: $(tblgen_source_dir)/AMDGPUGISel.td \
