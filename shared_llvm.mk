@@ -87,7 +87,8 @@ llvm_post_static_libraries := \
   libLLVM12CFGuard \
   libLLVM12FrontendOpenMP \
   libLLVM12HelloNew \
-  libLLVM12OrcShared
+  libLLVM12OrcShared \
+  libLLVM12OrcTargetProcess
 
 llvm_host_static_libraries := \
   libLLVM12ExecutionEngine \
