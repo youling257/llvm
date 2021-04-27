@@ -1,19 +1,18 @@
 LOCAL_PATH := $(call my-dir)
 
 amdgpu_codegen_TBLGEN_TABLES12 := \
-  AMDGPUGenRegisterInfo.inc \
-  AMDGPUGenInstrInfo.inc \
-  AMDGPUGenDAGISel.inc  \
-  AMDGPUGenSubtargetInfo.inc \
-  AMDGPUGenMCCodeEmitter.inc \
-  AMDGPUGenCallingConv.inc \
-  AMDGPUGenIntrinsicEnums.inc \
-  AMDGPUGenIntrinsicImpl.inc \
-  AMDGPUGenAsmWriter.inc \
   AMDGPUGenAsmMatcher.inc \
+  AMDGPUGenAsmWriter.inc \
+  AMDGPUGenCallingConv.inc \
+  AMDGPUGenDAGISel.inc \
   AMDGPUGenDisassemblerTables.inc \
+  AMDGPUGenInstrInfo.inc \
+  AMDGPUGenMCCodeEmitter.inc \
   AMDGPUGenMCPseudoLowering.inc \
+  AMDGPUGenRegisterBank.inc \
+  AMDGPUGenRegisterInfo.inc \
   AMDGPUGenSearchableTables.inc \
+  AMDGPUGenSubtargetInfo.inc \
   AMDGPUGenGlobalISel.inc \
   AMDGPUGenPreLegalizeGICombiner.inc \
   AMDGPUGenPostLegalizeGICombiner.inc \
@@ -35,15 +34,20 @@ amdgpu_codegen_SRC_FILES := \
   AMDGPUArgumentUsageInfo.cpp \
   AMDGPUAsmPrinter.cpp \
   AMDGPUAtomicOptimizer.cpp \
+  AMDGPUCallLowering.cpp \
   AMDGPUCodeGenPrepare.cpp \
   AMDGPUExportClustering.cpp \
   AMDGPUFixFunctionBitcasts.cpp \
   AMDGPUFrameLowering.cpp \
   AMDGPUHSAMetadataStreamer.cpp \
+  AMDGPUInstCombineIntrinsic.cpp \
   AMDGPUInstrInfo.cpp \
+  AMDGPUInstructionSelector.cpp \
   AMDGPUISelDAGToDAG.cpp \
   AMDGPUISelLowering.cpp \
   AMDGPUGlobalISelUtils.cpp \
+  AMDGPULateCodeGenPrepare.cpp \
+  AMDGPULegalizerInfo.cpp \
   AMDGPULibCalls.cpp \
   AMDGPULibFunc.cpp \
   AMDGPULowerIntrinsics.cpp \
@@ -54,12 +58,14 @@ amdgpu_codegen_SRC_FILES := \
   AMDGPUMachineModuleInfo.cpp \
   AMDGPUMacroFusion.cpp \
   AMDGPUMCInstLower.cpp \
+  AMDGPUMIRFormatter.cpp \
   AMDGPUOpenCLEnqueuedBlockLowering.cpp \
   AMDGPUPostLegalizerCombiner.cpp \
   AMDGPUPreLegalizerCombiner.cpp \
   AMDGPUPromoteAlloca.cpp \
   AMDGPUPropagateAttributes.cpp \
   AMDGPURegBankCombiner.cpp \
+  AMDGPURegisterBankInfo.cpp \
   AMDGPURewriteOutArguments.cpp \
   AMDGPUSubtarget.cpp \
   AMDGPUTargetMachine.cpp \
@@ -67,7 +73,6 @@ amdgpu_codegen_SRC_FILES := \
   AMDGPUTargetTransformInfo.cpp \
   AMDGPUUnifyDivergentExitNodes.cpp \
   AMDGPUUnifyMetadata.cpp \
-  AMDGPUInline.cpp \
   AMDGPUPerfHintAnalysis.cpp \
   AMDILCFGStructurizer.cpp \
   AMDGPUPrintfRuntimeBinding.cpp \
@@ -93,7 +98,6 @@ amdgpu_codegen_SRC_FILES := \
   SIAddIMGInit.cpp \
   SIAnnotateControlFlow.cpp \
   SIFixSGPRCopies.cpp \
-  SIFixupVectorISel.cpp \
   SIFixVGPRCopies.cpp \
   SIPreAllocateWWMRegs.cpp \
   SIFoldOperands.cpp \
@@ -116,6 +120,7 @@ amdgpu_codegen_SRC_FILES := \
   SIPeepholeSDWA.cpp \
   SIPostRABundler.cpp \
   SIPreEmitPeephole.cpp \
+  SIProgramInfo.cpp \
   SIRegisterInfo.cpp \
   SIRemoveShortExecBranches.cpp \
   SIShrinkInstructions.cpp \
@@ -125,17 +130,6 @@ amdgpu_codegen_SRC_FILES := \
   GCNNSAReassign.cpp \
   GCNDPPCombine.cpp \
   SIModeRegister.cpp
-
-ifeq ($(FORCE_BUILD_LLVM_GLOBAL_ISEL),true)
-amdgpu_codegen_TBLGEN_TABLES12 += \
-  AMDGPUGenRegisterBank.inc
-
-amdgpu_codegen_SRC_FILES += \
-  AMDGPUCallLowering.cpp \
-  AMDGPUInstructionSelector.cpp \
-  AMDGPULegalizerInfo.cpp \
-  AMDGPURegisterBankInfo.cpp
-endif
 
 # For the host
 # =====================================================

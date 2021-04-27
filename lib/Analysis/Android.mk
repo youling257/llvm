@@ -26,24 +26,29 @@ analysis_SRC_FILES := \
   CodeMetrics.cpp \
   ConstantFolding.cpp \
   DDG.cpp \
+  DDGPrinter.cpp \
+  ConstraintSystem.cpp \
   Delinearization.cpp \
   DemandedBits.cpp \
   DependenceAnalysis.cpp \
   DependenceGraphBuilder.cpp \
+  DevelopmentModeInlineAdvisor.cpp \
   DivergenceAnalysis.cpp \
   DomPrinter.cpp \
   DomTreeUpdater.cpp \
   DominanceFrontier.cpp \
   EHPersonalities.cpp \
+  FunctionPropertiesAnalysis.cpp \
   GlobalsModRef.cpp \
   GuardUtils.cpp \
   HeatUtils.cpp \
+  IRSimilarityIdentifier.cpp \
   IVDescriptors.cpp \
   IVUsers.cpp \
+  ImportedFunctionsInliningStatistics.cpp \
   IndirectCallPromotionAnalysis.cpp \
   InlineCost.cpp \
   InlineAdvisor.cpp \
-  InlineFeaturesAnalysis.cpp \
   InlineSizeEstimatorAnalysis.cpp \
   InstCount.cpp \
   InstructionPrecedenceTracking.cpp \
@@ -64,6 +69,7 @@ analysis_SRC_FILES := \
   LoopUnrollAnalyzer.cpp \
   LoopInfo.cpp \
   LoopPass.cpp \
+  MLInlineAdvisor.cpp \
   MemDepPrinter.cpp \
   MemDerefPrinter.cpp \
   MemoryBuiltins.cpp \
@@ -86,6 +92,8 @@ analysis_SRC_FILES := \
   RegionInfo.cpp \
   RegionPass.cpp \
   RegionPrinter.cpp \
+  ReleaseModeModelRunner.cpp \
+  ReplayInlineAdvisor.cpp \
   ScalarEvolution.cpp \
   ScalarEvolutionAliasAnalysis.cpp \
   ScalarEvolutionDivision.cpp \
@@ -94,6 +102,7 @@ analysis_SRC_FILES := \
   StackSafetyAnalysis.cpp \
   SyncDependenceAnalysis.cpp \
   SyntheticCountsUtils.cpp \
+  TFUtils.cpp \
   TargetLibraryInfo.cpp \
   TargetTransformInfo.cpp \
   Trace.cpp \

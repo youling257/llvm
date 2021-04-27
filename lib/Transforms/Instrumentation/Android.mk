@@ -7,6 +7,7 @@ instrumentation_SRC_FILES := \
   ControlHeightReduction.cpp \
   DataFlowSanitizer.cpp \
   GCOVProfiling.cpp \
+  MemProfiler.cpp \
   MemorySanitizer.cpp \
   IndirectCallPromotion.cpp \
   Instrumentation.cpp \

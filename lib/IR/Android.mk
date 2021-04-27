@@ -3,6 +3,7 @@ LOCAL_PATH:= $(call my-dir)
 vmcore_SRC_FILES := \
   AbstractCallSite.cpp \
   AsmWriter.cpp \
+  Assumptions.cpp \
   Attributes.cpp \
   AutoUpgrade.cpp \
   BasicBlock.cpp \
@@ -46,9 +47,13 @@ vmcore_SRC_FILES := \
   PassManager.cpp \
   PassRegistry.cpp \
   PassTimingInfo.cpp \
+  PrintPasses.cpp \
   SafepointIRVerifier.cpp \
   ProfileSummary.cpp \
+  PseudoProbe.cpp \
+  ReplaceConstant.cpp \
   Statepoint.cpp \
+  StructuralHash.cpp \
   Type.cpp \
   TypeFinder.cpp \
   Use.cpp \

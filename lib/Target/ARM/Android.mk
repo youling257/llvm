@@ -1,18 +1,19 @@
 LOCAL_PATH := $(call my-dir)
 
 arm_codegen_TBLGEN_TABLES12 := \
-  ARMGenRegisterInfo.inc \
+  ARMGenAsmMatcher.inc \
+  ARMGenAsmWriter.inc \
+  ARMGenCallingConv.inc \
+  ARMGenDAGISel.inc \
+  ARMGenDisassemblerTables.inc \
+  ARMGenFastISel.inc \
+  ARMGenGlobalISel.inc \
   ARMGenInstrInfo.inc \
-  ARMGenCodeEmitter.inc \
   ARMGenMCCodeEmitter.inc \
   ARMGenMCPseudoLowering.inc \
-  ARMGenAsmWriter.inc \
-  ARMGenAsmMatcher.inc \
-  ARMGenDAGISel.inc \
-  ARMGenFastISel.inc \
-  ARMGenCallingConv.inc \
+  ARMGenRegisterBank.inc \
+  ARMGenRegisterInfo.inc \
   ARMGenSubtargetInfo.inc \
-  ARMGenDisassemblerTables.inc \
   ARMGenSystemRegister.inc
 
 arm_codegen_SRC_FILES := \
@@ -22,24 +23,30 @@ arm_codegen_SRC_FILES := \
   ARMBaseRegisterInfo.cpp \
   ARMBasicBlockInfo.cpp \
   ARMCallingConv.cpp \
+  ARMCallLowering.cpp \
   ARMConstantIslandPass.cpp \
   ARMConstantPoolValue.cpp \
   ARMExpandPseudoInsts.cpp \
   ARMFastISel.cpp \
   ARMFrameLowering.cpp \
   ARMHazardRecognizer.cpp \
+  ARMInstructionSelector.cpp \
   ARMISelDAGToDAG.cpp \
   ARMISelLowering.cpp \
   ARMInstrInfo.cpp \
+  ARMLegalizerInfo.cpp \
+  ARMParallelDSP.cpp \
   ARMLoadStoreOptimizer.cpp \
   ARMLowOverheadLoops.cpp \
+  ARMBlockPlacement.cpp \
   ARMMCInstLower.cpp \
   ARMMachineFunctionInfo.cpp \
   ARMMacroFusion.cpp \
   ARMRegisterInfo.cpp \
   ARMOptimizeBarriersPass.cpp \
-  ARMParallelDSP.cpp \
+  ARMRegisterBankInfo.cpp \
   ARMSelectionDAGInfo.cpp \
+  ARMSLSHardening.cpp \
   ARMSubtarget.cpp \
   ARMTargetMachine.cpp \
   ARMTargetObjectFile.cpp \
@@ -55,18 +62,6 @@ arm_codegen_SRC_FILES := \
   Thumb2ITBlockPass.cpp \
   Thumb2InstrInfo.cpp \
   Thumb2SizeReduction.cpp
-
-ifeq ($(FORCE_BUILD_LLVM_GLOBAL_ISEL),true)
-arm_codegen_TBLGEN_TABLES12 += \
-  ARMGenRegisterBank.inc \
-  ARMGenGlobalISel.inc
-
-arm_codegen_SRC_FILES += \
-  ARMCallLowering.cpp \
-  ARMInstructionSelector.cpp \
-  ARMLegalizerInfo.cpp \
-  ARMRegisterBankInfo.cpp
-endif
 
 # For the host
 # =====================================================

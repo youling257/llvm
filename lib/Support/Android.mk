@@ -7,6 +7,7 @@ support_SRC_FILES := \
   ABIBreak.cpp \
   ARMTargetParser.cpp \
   AMDGPUMetadata.cpp \
+  APFixedPoint.cpp \
   APFloat.cpp \
   APInt.cpp \
   APSInt.cpp \
@@ -43,7 +44,6 @@ support_SRC_FILES := \
   Error.cpp \
   ErrorHandling.cpp \
   ExtensibleRTTI.cpp \
-  FileCheck.cpp \
   FileCollector.cpp \
   FileUtilities.cpp \
   FileOutputBuffer.cpp \
@@ -54,6 +54,7 @@ support_SRC_FILES := \
   GraphWriter.cpp \
   Hashing.cpp \
   InitLLVM.cpp \
+  InstructionCost.cpp \
   IntEqClasses.cpp \
   IntervalMap.cpp \
   ItaniumManglingCanonicalizer.cpp \
@@ -68,6 +69,7 @@ support_SRC_FILES := \
   MathExtras.cpp \
   MemAlloc.cpp \
   MemoryBuffer.cpp \
+  MemoryBufferRef.cpp \
   MD5.cpp \
   NativeFormatting.cpp \
   OptimizedStructLayout.cpp \

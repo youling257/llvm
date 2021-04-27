@@ -6,6 +6,7 @@ lto_SRC_FILES := \
   LTOBackend.cpp \
   LTOModule.cpp \
   LTOCodeGenerator.cpp \
+  SummaryBasedOptimizations.cpp \
   UpdateCompilerUsed.cpp \
   ThinLTOCodeGenerator.cpp
 

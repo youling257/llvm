@@ -11,22 +11,22 @@ orcjit_SRC_FILES := \
   IRTransformLayer.cpp \
   JITTargetMachineBuilder.cpp \
   LazyReexports.cpp \
-  Legacy.cpp \
   Layer.cpp \
   LLJIT.cpp \
   MachOPlatform.cpp \
   Mangling.cpp \
-  NullResolver.cpp \
   ObjectLinkingLayer.cpp \
   ObjectTransformLayer.cpp \
   OrcABISupport.cpp \
-  OrcCBindings.cpp \
   OrcV2CBindings.cpp \
-  OrcMCJITReplacement.cpp \
   RTDyldObjectLinkingLayer.cpp \
-  ThreadSafeModule.cpp \
   Speculation.cpp \
-  SpeculateAnalyses.cpp
+  SpeculateAnalyses.cpp \
+  TargetProcessControl.cpp \
+  ThreadSafeModule.cpp \
+  TPCDynamicLibrarySearchGenerator.cpp \
+  TPCEHFrameRegistrar.cpp \
+  TPCIndirectionUtils.cpp
 
 # For the host
 # =====================================================
