@@ -36,6 +36,7 @@ subdirs := \
   lib/ExecutionEngine/MCJIT \
   lib/ExecutionEngine/Orc \
   lib/ExecutionEngine/Orc/Shared \
+  lib/ExecutionEngine/Orc/TargetProcess \
   lib/ExecutionEngine/Interpreter \
   lib/Fuzzer \
   lib/Frontend/OpenMP \
