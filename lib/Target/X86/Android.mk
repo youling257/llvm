@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-x86_codegen_TBLGEN_TABLES11 := \
+x86_codegen_TBLGEN_TABLES12 := \
   X86GenAsmMatcher.inc \
   X86GenAsmWriter.inc \
   X86GenAsmWriter1.inc \
@@ -65,7 +65,7 @@ x86_codegen_SRC_FILES := \
   X86InsertWait.cpp
 
 ifeq ($(FORCE_BUILD_LLVM_GLOBAL_ISEL),true)
-x86_codegen_TBLGEN_TABLES11 += \
+x86_codegen_TBLGEN_TABLES12 += \
   X86GenRegisterBank.inc \
   X86GenGlobalISel.inc
 
@@ -79,37 +79,37 @@ endif
 # For the host
 # =====================================================
 include $(CLEAR_VARS)
-include $(CLEAR_TBLGEN_VARS11)
+include $(CLEAR_TBLGEN_VARS12)
 
-TBLGEN_TABLES11 := $(x86_codegen_TBLGEN_TABLES11)
+TBLGEN_TABLES12 := $(x86_codegen_TBLGEN_TABLES12)
 
 LOCAL_SRC_FILES := $(x86_codegen_SRC_FILES)
 
-LOCAL_MODULE:= libLLVM11X86CodeGen
+LOCAL_MODULE:= libLLVM12X86CodeGen
 
 LOCAL_MODULE_HOST_OS := darwin linux windows
 
-include $(LLVM11_HOST_BUILD_MK)
-include $(LLVM11_TBLGEN_RULES_MK)
-include $(LLVM11_GEN_ATTRIBUTES_MK)
-include $(LLVM11_GEN_INTRINSICS_MK)
+include $(LLVM12_HOST_BUILD_MK)
+include $(LLVM12_TBLGEN_RULES_MK)
+include $(LLVM12_GEN_ATTRIBUTES_MK)
+include $(LLVM12_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_STATIC_LIBRARY)
 
 # For the device only
 # =====================================================
 ifneq (true,$(DISABLE_LLVM_DEVICE_BUILDS))
 include $(CLEAR_VARS)
-include $(CLEAR_TBLGEN_VARS11)
+include $(CLEAR_TBLGEN_VARS12)
 
-TBLGEN_TABLES11 := $(x86_codegen_TBLGEN_TABLES11)
+TBLGEN_TABLES12 := $(x86_codegen_TBLGEN_TABLES12)
 
 LOCAL_SRC_FILES := $(x86_codegen_SRC_FILES)
 
-LOCAL_MODULE:= libLLVM11X86CodeGen
+LOCAL_MODULE:= libLLVM12X86CodeGen
 
-include $(LLVM11_DEVICE_BUILD_MK)
-include $(LLVM11_TBLGEN_RULES_MK)
-include $(LLVM11_GEN_ATTRIBUTES_MK)
-include $(LLVM11_GEN_INTRINSICS_MK)
+include $(LLVM12_DEVICE_BUILD_MK)
+include $(LLVM12_TBLGEN_RULES_MK)
+include $(LLVM12_GEN_ATTRIBUTES_MK)
+include $(LLVM12_GEN_INTRINSICS_MK)
 include $(BUILD_STATIC_LIBRARY)
 endif

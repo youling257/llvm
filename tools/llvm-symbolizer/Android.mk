@@ -1,7 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 
-LLVM11_ROOT_PATH := $(LOCAL_PATH)/../..
-include $(LLVM11_ROOT_PATH)/llvm.mk
+LLVM12_ROOT_PATH := $(LOCAL_PATH)/../..
+include $(LLVM12_ROOT_PATH)/llvm.mk
 
 llvm_symbolizer_SRC_FILES := \
   llvm-symbolizer.cpp
@@ -15,18 +15,18 @@ LOCAL_SRC_FILES := $(llvm_symbolizer_SRC_FILES)
 LOCAL_LDLIBS += -lpthread -lm -ldl
 
 LOCAL_STATIC_LIBRARIES := \
-  libLLVM11Symbolize \
-  libLLVM11DebugInfoDWARF \
-  libLLVM11DebugInfoPDB \
-  libLLVM11Object \
-  libLLVM11BitReader \
-  libLLVM11MC \
-  libLLVM11MCParser \
-  libLLVM11Core \
-  libLLVM11Support
+  libLLVM12Symbolize \
+  libLLVM12DebugInfoDWARF \
+  libLLVM12DebugInfoPDB \
+  libLLVM12Object \
+  libLLVM12BitReader \
+  libLLVM12MC \
+  libLLVM12MCParser \
+  libLLVM12Core \
+  libLLVM12Support
 
-include $(LLVM11_HOST_BUILD_MK)
-include $(LLVM11_GEN_INTRINSICS_MK)
+include $(LLVM12_HOST_BUILD_MK)
+include $(LLVM12_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_EXECUTABLE)
 
 include $(CLEAR_VARS)
@@ -35,8 +35,8 @@ ifneq (true,$(DISABLE_LLVM_DEVICE_BUILDS))
 LOCAL_MODULE := llvm-symbolizer
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := $(llvm_symbolizer_SRC_FILES)
-LOCAL_SHARED_LIBRARIES := libLLVM11
+LOCAL_SHARED_LIBRARIES := libLLVM12
 
-include $(LLVM11_DEVICE_BUILD_MK)
+include $(LLVM12_DEVICE_BUILD_MK)
 include $(BUILD_EXECUTABLE)
 endif

@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-LLVM11_ROOT_PATH := $(LOCAL_PATH)/../..
+LLVM12_ROOT_PATH := $(LOCAL_PATH)/../..
 
 
 #===---------------------------------------------------------------===
@@ -11,57 +11,57 @@ llvm_sancov_SRC_FILES := \
   sancov.cc \
 
 llvm_sancov_STATIC_LIBRARIES := \
-  libLLVM11IRReader \
-  libLLVM11ARMCodeGen \
-  libLLVM11ARMInfo \
-  libLLVM11ARMDesc \
-  libLLVM11ARMAsmPrinter \
-  libLLVM11ARMDisassembler \
-  libLLVM11AArch64CodeGen \
-  libLLVM11AArch64Info \
-  libLLVM11AArch64Desc \
-  libLLVM11AArch64AsmPrinter \
-  libLLVM11AArch64Utils \
-  libLLVM11AArch64Disassembler \
-  libLLVM11MipsCodeGen \
-  libLLVM11MipsInfo \
-  libLLVM11MipsDesc \
-  libLLVM11MipsAsmPrinter \
-  libLLVM11MipsDisassembler \
-  libLLVM11X86CodeGen \
-  libLLVM11X86Info \
-  libLLVM11X86Desc \
-  libLLVM11X86AsmPrinter \
-  libLLVM11X86Utils \
-  libLLVM11X86Disassembler \
-  libLLVM11Symbolize \
-  libLLVM11DebugInfoDWARF \
-  libLLVM11DebugInfoPDB \
-  libLLVM11AsmPrinter \
-  libLLVM11SelectionDAG \
-  libLLVM11CodeGen \
-  libLLVM11TransformObjCARC \
-  libLLVM11Vectorize \
-  libLLVM11ScalarOpts \
-  libLLVM11Passes \
-  libLLVM11ipo \
-  libLLVM11Linker \
-  libLLVM11InstCombine \
-  libLLVM11Instrumentation \
-  libLLVM11TransformUtils \
-  libLLVM11Analysis \
-  libLLVM11Target \
-  libLLVM11Object \
-  libLLVM11BitReader \
-  libLLVM11BitWriter \
-  libLLVM11MC \
-  libLLVM11MCParser \
-  libLLVM11ProfileData \
-  libLLVM11Core \
-  libLLVM11AsmParser \
-  libLLVM11Option \
-  libLLVM11Support \
-  libLLVM11MCDisassembler \
+  libLLVM12IRReader \
+  libLLVM12ARMCodeGen \
+  libLLVM12ARMInfo \
+  libLLVM12ARMDesc \
+  libLLVM12ARMAsmPrinter \
+  libLLVM12ARMDisassembler \
+  libLLVM12AArch64CodeGen \
+  libLLVM12AArch64Info \
+  libLLVM12AArch64Desc \
+  libLLVM12AArch64AsmPrinter \
+  libLLVM12AArch64Utils \
+  libLLVM12AArch64Disassembler \
+  libLLVM12MipsCodeGen \
+  libLLVM12MipsInfo \
+  libLLVM12MipsDesc \
+  libLLVM12MipsAsmPrinter \
+  libLLVM12MipsDisassembler \
+  libLLVM12X86CodeGen \
+  libLLVM12X86Info \
+  libLLVM12X86Desc \
+  libLLVM12X86AsmPrinter \
+  libLLVM12X86Utils \
+  libLLVM12X86Disassembler \
+  libLLVM12Symbolize \
+  libLLVM12DebugInfoDWARF \
+  libLLVM12DebugInfoPDB \
+  libLLVM12AsmPrinter \
+  libLLVM12SelectionDAG \
+  libLLVM12CodeGen \
+  libLLVM12TransformObjCARC \
+  libLLVM12Vectorize \
+  libLLVM12ScalarOpts \
+  libLLVM12Passes \
+  libLLVM12ipo \
+  libLLVM12Linker \
+  libLLVM12InstCombine \
+  libLLVM12Instrumentation \
+  libLLVM12TransformUtils \
+  libLLVM12Analysis \
+  libLLVM12Target \
+  libLLVM12Object \
+  libLLVM12BitReader \
+  libLLVM12BitWriter \
+  libLLVM12MC \
+  libLLVM12MCParser \
+  libLLVM12ProfileData \
+  libLLVM12Core \
+  libLLVM12AsmParser \
+  libLLVM12Option \
+  libLLVM12Support \
+  libLLVM12MCDisassembler \
 
 include $(CLEAR_VARS)
 
@@ -71,6 +71,6 @@ LOCAL_CPP_EXTENSION := .cc
 LOCAL_SRC_FILES := $(llvm_sancov_SRC_FILES)
 LOCAL_STATIC_LIBRARIES := $(llvm_sancov_STATIC_LIBRARIES)
 
-include $(LLVM11_ROOT_PATH)/llvm.mk
-include $(LLVM11_HOST_BUILD_MK)
+include $(LLVM12_ROOT_PATH)/llvm.mk
+include $(LLVM12_HOST_BUILD_MK)
 include $(BUILD_HOST_EXECUTABLE)

@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
-LLVM11_ROOT_PATH := $(LOCAL_PATH)
-LLVM11_TBLGEN := $(HOST_OUT_EXECUTABLES)/llvm11-tblgen
+LLVM12_ROOT_PATH := $(LOCAL_PATH)
+LLVM12_TBLGEN := $(HOST_OUT_EXECUTABLES)/llvm12-tblgen
 
 FORCE_BUILD_LLVM_DISABLE_NDEBUG ?= false
 # Legality check: FORCE_BUILD_LLVM_DISABLE_NDEBUG should consist of one word -- either "true" or "false".

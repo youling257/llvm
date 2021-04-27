@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-LLVM11_ROOT_PATH := $(LOCAL_PATH)/../..
+LLVM12_ROOT_PATH := $(LOCAL_PATH)/../..
 
 
 #===---------------------------------------------------------------===
@@ -19,7 +19,7 @@ LOCAL_IS_HOST_MODULE := true
 
 LOCAL_SRC_FILES := $(llvm_ar_SRC_FILES)
 
-LOCAL_SHARED_LIBRARIES := libLLVM11
+LOCAL_SHARED_LIBRARIES := libLLVM12
 
 LOCAL_LDLIBS += -lpthread -lm -ldl
 
@@ -28,7 +28,7 @@ LOCAL_LDLIBS += -lpthread -lm -ldl
 LOCAL_POST_INSTALL_CMD = $(hide) ln -sf llvm-ar $(dir $(LOCAL_INSTALLED_MODULE))llvm-lib \
 						 && ln -sf llvm-ar $(dir $(LOCAL_INSTALLED_MODULE))llvm-ranlib
 
-include $(LLVM11_ROOT_PATH)/llvm.mk
-include $(LLVM11_HOST_BUILD_MK)
-include $(LLVM11_GEN_ATTRIBUTES_MK)
+include $(LLVM12_ROOT_PATH)/llvm.mk
+include $(LLVM12_HOST_BUILD_MK)
+include $(LLVM12_GEN_ATTRIBUTES_MK)
 include $(BUILD_HOST_EXECUTABLE)

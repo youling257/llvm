@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-LLVM11_ROOT_PATH := $(LOCAL_PATH)/../..
+LLVM12_ROOT_PATH := $(LOCAL_PATH)/../..
 
 
 #===---------------------------------------------------------------===
@@ -21,16 +21,16 @@ llvm_readobj_SRC_FILES := \
   Win64EHDumper.cpp \
 
 llvm_readobj_STATIC_LIBRARIES := \
-  libLLVM11ARMInfo \
-  libLLVM11AArch64Info \
-  libLLVM11MipsInfo \
-  libLLVM11X86Info \
-  libLLVM11Object \
-  libLLVM11BitReader \
-  libLLVM11MC \
-  libLLVM11MCParser \
-  libLLVM11Core \
-  libLLVM11Support \
+  libLLVM12ARMInfo \
+  libLLVM12AArch64Info \
+  libLLVM12MipsInfo \
+  libLLVM12X86Info \
+  libLLVM12Object \
+  libLLVM12BitReader \
+  libLLVM12MC \
+  libLLVM12MCParser \
+  libLLVM12Core \
+  libLLVM12Support \
 
 include $(CLEAR_VARS)
 
@@ -45,7 +45,7 @@ LOCAL_STATIC_LIBRARIES := $(llvm_readobj_STATIC_LIBRARIES)
 
 LOCAL_LDLIBS += -lpthread -lm -ldl
 
-include $(LLVM11_ROOT_PATH)/llvm.mk
-include $(LLVM11_HOST_BUILD_MK)
-include $(LLVM11_GEN_INTRINSICS_MK)
+include $(LLVM12_ROOT_PATH)/llvm.mk
+include $(LLVM12_HOST_BUILD_MK)
+include $(LLVM12_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_EXECUTABLE)

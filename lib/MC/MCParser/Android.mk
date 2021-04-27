@@ -20,11 +20,11 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := $(mc_parser_SRC_FILES)
 
-LOCAL_MODULE:= libLLVM11MCParser
+LOCAL_MODULE:= libLLVM12MCParser
 
 LOCAL_MODULE_HOST_OS := darwin linux windows
 
-include $(LLVM11_HOST_BUILD_MK)
+include $(LLVM12_HOST_BUILD_MK)
 include $(BUILD_HOST_STATIC_LIBRARY)
 
 # For the device
@@ -34,8 +34,8 @@ ifneq (true,$(DISABLE_LLVM_DEVICE_BUILDS))
 
 LOCAL_SRC_FILES := $(mc_parser_SRC_FILES)
 
-LOCAL_MODULE:= libLLVM11MCParser
+LOCAL_MODULE:= libLLVM12MCParser
 
-include $(LLVM11_DEVICE_BUILD_MK)
+include $(LLVM12_DEVICE_BUILD_MK)
 include $(BUILD_STATIC_LIBRARY)
 endif
