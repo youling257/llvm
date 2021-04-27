@@ -1,7 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 
-LLVM11_ROOT_PATH := $(LOCAL_PATH)/../..
-include $(LLVM11_ROOT_PATH)/llvm.mk
+LLVM12_ROOT_PATH := $(LOCAL_PATH)/../..
+include $(LLVM12_ROOT_PATH)/llvm.mk
 
 verify_uselistorder_SRC_FILES := \
   verify-uselistorder.cpp
@@ -15,14 +15,14 @@ LOCAL_SRC_FILES := $(verify_uselistorder_SRC_FILES)
 LOCAL_LDLIBS += -lpthread -lm -ldl
 
 LOCAL_STATIC_LIBRARIES := \
-  libLLVM11AsmParser \
-  libLLVM11BitReader \
-  libLLVM11BitWriter \
-  libLLVM11Core \
-  libLLVM11IRReader \
-  libLLVM11Support
+  libLLVM12AsmParser \
+  libLLVM12BitReader \
+  libLLVM12BitWriter \
+  libLLVM12Core \
+  libLLVM12IRReader \
+  libLLVM12Support
 
-include $(LLVM11_HOST_BUILD_MK)
-include $(LLVM11_GEN_ATTRIBUTES_MK)
-include $(LLVM11_GEN_INTRINSICS_MK)
+include $(LLVM12_HOST_BUILD_MK)
+include $(LLVM12_GEN_ATTRIBUTES_MK)
+include $(LLVM12_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_EXECUTABLE)

@@ -12,12 +12,12 @@ LOCAL_SRC_FILES := $(llvm_dis_SRC_FILES)
 LOCAL_LDLIBS += -lpthread -lm -ldl
 
 LOCAL_STATIC_LIBRARIES := \
-  libLLVM11Analysis \
-  libLLVM11BitReader \
-  libLLVM11Core \
-  libLLVM11Support
+  libLLVM12Analysis \
+  libLLVM12BitReader \
+  libLLVM12Core \
+  libLLVM12Support
 
-include $(LLVM11_HOST_BUILD_MK)
-include $(LLVM11_GEN_ATTRIBUTES_MK)
-include $(LLVM11_GEN_INTRINSICS_MK)
+include $(LLVM12_HOST_BUILD_MK)
+include $(LLVM12_GEN_ATTRIBUTES_MK)
+include $(LLVM12_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_EXECUTABLE)

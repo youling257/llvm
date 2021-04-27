@@ -46,14 +46,14 @@ transforms_ipo_SRC_FILES := \
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := $(transforms_ipo_SRC_FILES)
-LOCAL_MODULE:= libLLVM11ipo
+LOCAL_MODULE:= libLLVM12ipo
 
 LOCAL_MODULE_HOST_OS := darwin linux windows
 
-include $(LLVM11_HOST_BUILD_MK)
-include $(LLVM11_GEN_ATTRIBUTES_MK)
-include $(LLVM11_GEN_INTRINSICS_MK)
-include $(LLVM11_GEN_OMP_GEN_MK)
+include $(LLVM12_HOST_BUILD_MK)
+include $(LLVM12_GEN_ATTRIBUTES_MK)
+include $(LLVM12_GEN_INTRINSICS_MK)
+include $(LLVM12_GEN_OMP_GEN_MK)
 include $(BUILD_HOST_STATIC_LIBRARY)
 
 # For the device
@@ -62,11 +62,11 @@ ifneq (true,$(DISABLE_LLVM_DEVICE_BUILDS))
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := $(transforms_ipo_SRC_FILES)
-LOCAL_MODULE:= libLLVM11ipo
+LOCAL_MODULE:= libLLVM12ipo
 
-include $(LLVM11_DEVICE_BUILD_MK)
-include $(LLVM11_GEN_ATTRIBUTES_MK)
-include $(LLVM11_GEN_INTRINSICS_MK)
-include $(LLVM11_GEN_OMP_GEN_MK)
+include $(LLVM12_DEVICE_BUILD_MK)
+include $(LLVM12_GEN_ATTRIBUTES_MK)
+include $(LLVM12_GEN_INTRINSICS_MK)
+include $(LLVM12_GEN_OMP_GEN_MK)
 include $(BUILD_STATIC_LIBRARY)
 endif

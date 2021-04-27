@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-LLVM11_ROOT_PATH := $(LOCAL_PATH)/../..
+LLVM12_ROOT_PATH := $(LOCAL_PATH)/../..
 
 
 #===---------------------------------------------------------------===
@@ -21,6 +21,6 @@ LOCAL_SRC_FILES := $(count_SRC_FILES)
 
 LOCAL_LDLIBS += -lpthread -lm -ldl
 
-include $(LLVM11_ROOT_PATH)/llvm.mk
-include $(LLVM11_HOST_BUILD_MK)
+include $(LLVM12_ROOT_PATH)/llvm.mk
+include $(LLVM12_HOST_BUILD_MK)
 include $(BUILD_HOST_EXECUTABLE)

@@ -15,13 +15,13 @@ REQUIRES_RTTI := 1
 
 LOCAL_SRC_FILES := $(option_SRC_FILES)
 
-LOCAL_MODULE:= libLLVM11Option
+LOCAL_MODULE:= libLLVM12Option
 
 LOCAL_CFLAGS := -D__android__
 
 LOCAL_MODULE_HOST_OS := darwin linux windows
 
-include $(LLVM11_HOST_BUILD_MK)
+include $(LLVM12_HOST_BUILD_MK)
 include $(BUILD_HOST_STATIC_LIBRARY)
 
 # For the device
@@ -31,10 +31,10 @@ ifneq (true,$(DISABLE_LLVM_DEVICE_BUILDS))
 
 LOCAL_SRC_FILES := $(option_SRC_FILES)
 
-LOCAL_MODULE:= libLLVM11Option
+LOCAL_MODULE:= libLLVM12Option
 
 LOCAL_CFLAGS := -D__android__
 
-include $(LLVM11_DEVICE_BUILD_MK)
+include $(LLVM12_DEVICE_BUILD_MK)
 include $(BUILD_STATIC_LIBRARY)
 endif

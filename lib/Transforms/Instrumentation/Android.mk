@@ -24,13 +24,13 @@ instrumentation_SRC_FILES := \
 # =====================================================
 include $(CLEAR_VARS)
 
-LOCAL_MODULE:= libLLVM11Instrumentation
+LOCAL_MODULE:= libLLVM12Instrumentation
 LOCAL_MODULE_HOST_OS := darwin linux windows
 LOCAL_SRC_FILES := $(instrumentation_SRC_FILES)
 
-include $(LLVM11_HOST_BUILD_MK)
-include $(LLVM11_GEN_ATTRIBUTES_MK)
-include $(LLVM11_GEN_INTRINSICS_MK)
+include $(LLVM12_HOST_BUILD_MK)
+include $(LLVM12_GEN_ATTRIBUTES_MK)
+include $(LLVM12_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_STATIC_LIBRARY)
 
 # For the target
@@ -38,11 +38,11 @@ include $(BUILD_HOST_STATIC_LIBRARY)
 ifneq (true,$(DISABLE_LLVM_DEVICE_BUILDS))
 include $(CLEAR_VARS)
 
-LOCAL_MODULE:= libLLVM11Instrumentation
+LOCAL_MODULE:= libLLVM12Instrumentation
 LOCAL_SRC_FILES := $(instrumentation_SRC_FILES)
 
-include $(LLVM11_DEVICE_BUILD_MK)
-include $(LLVM11_GEN_ATTRIBUTES_MK)
-include $(LLVM11_GEN_INTRINSICS_MK)
+include $(LLVM12_DEVICE_BUILD_MK)
+include $(LLVM12_GEN_ATTRIBUTES_MK)
+include $(LLVM12_GEN_INTRINSICS_MK)
 include $(BUILD_STATIC_LIBRARY)
 endif

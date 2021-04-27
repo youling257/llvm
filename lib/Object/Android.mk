@@ -33,9 +33,9 @@ object_SRC_FILES := \
 # For the host
 # =====================================================
 include $(CLEAR_VARS)
-include $(CLEAR_TBLGEN_VARS11)
+include $(CLEAR_TBLGEN_VARS12)
 
-LOCAL_MODULE:= libLLVM11Object
+LOCAL_MODULE:= libLLVM12Object
 LOCAL_MODULE_HOST_OS := darwin linux windows
 
 LOCAL_SRC_FILES := $(object_SRC_FILES)
@@ -43,9 +43,9 @@ LOCAL_SRC_FILES := $(object_SRC_FILES)
 # Our windows cross-compiler triggers a spurious uninitialized warning.
 LOCAL_CFLAGS_windows := -Wno-uninitialized
 
-include $(LLVM11_HOST_BUILD_MK)
-include $(LLVM11_GEN_ATTRIBUTES_MK)
-include $(LLVM11_GEN_INTRINSICS_MK)
+include $(LLVM12_HOST_BUILD_MK)
+include $(LLVM12_GEN_ATTRIBUTES_MK)
+include $(LLVM12_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_STATIC_LIBRARY)
 
 # For the device only
@@ -53,12 +53,12 @@ include $(BUILD_HOST_STATIC_LIBRARY)
 ifneq (true,$(DISABLE_LLVM_DEVICE_BUILDS))
 include $(CLEAR_VARS)
 
-LOCAL_MODULE:= libLLVM11Object
+LOCAL_MODULE:= libLLVM12Object
 
 LOCAL_SRC_FILES := $(object_SRC_FILES)
 
-include $(LLVM11_DEVICE_BUILD_MK)
-include $(LLVM11_GEN_ATTRIBUTES_MK)
-include $(LLVM11_GEN_INTRINSICS_MK)
+include $(LLVM12_DEVICE_BUILD_MK)
+include $(LLVM12_GEN_ATTRIBUTES_MK)
+include $(LLVM12_GEN_INTRINSICS_MK)
 include $(BUILD_STATIC_LIBRARY)
 endif

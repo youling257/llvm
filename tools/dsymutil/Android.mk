@@ -1,7 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 
-LLVM11_ROOT_PATH := $(LOCAL_PATH)/../..
-include $(LLVM11_ROOT_PATH)/llvm.mk
+LLVM12_ROOT_PATH := $(LOCAL_PATH)/../..
+include $(LLVM12_ROOT_PATH)/llvm.mk
 
 llvm_dsymutil_SRC_FILES := \
   BinaryHolder.cpp \
@@ -12,49 +12,49 @@ llvm_dsymutil_SRC_FILES := \
   MachOUtils.cpp \
 
 llvm_dsymutil_STATIC_LIBRARIES := \
-  libLLVM11ARMCodeGen \
-  libLLVM11ARMAsmParser \
-  libLLVM11ARMInfo \
-  libLLVM11ARMDesc \
-  libLLVM11ARMAsmPrinter \
-  libLLVM11ARMDisassembler \
-  libLLVM11AArch64CodeGen \
-  libLLVM11AArch64Info \
-  libLLVM11AArch64AsmParser \
-  libLLVM11AArch64Desc \
-  libLLVM11AArch64AsmPrinter \
-  libLLVM11AArch64Utils \
-  libLLVM11AArch64Disassembler \
-  libLLVM11MipsCodeGen \
-  libLLVM11MipsInfo \
-  libLLVM11MipsAsmParser \
-  libLLVM11MipsDesc \
-  libLLVM11MipsAsmPrinter \
-  libLLVM11MipsDisassembler \
-  libLLVM11X86CodeGen \
-  libLLVM11X86Info \
-  libLLVM11X86Desc \
-  libLLVM11X86AsmParser \
-  libLLVM11X86AsmPrinter \
-  libLLVM11X86Utils \
-  libLLVM11X86Disassembler \
-  libLLVM11X86CodeGen \
-  libLLVM11AsmPrinter \
-  libLLVM11SelectionDAG \
-  libLLVM11CodeGen \
-  libLLVM11DebugInfoDWARF \
-  libLLVM11Instrumentation \
-  libLLVM11MCParser \
-  libLLVM11MCDisassembler \
-  libLLVM11Object \
-  libLLVM11BitReader \
-  libLLVM11ScalarOpts \
-  libLLVM11TransformUtils \
-  libLLVM11Analysis \
-  libLLVM11Target \
-  libLLVM11Core \
-  libLLVM11MC \
-  libLLVM11Support \
+  libLLVM12ARMCodeGen \
+  libLLVM12ARMAsmParser \
+  libLLVM12ARMInfo \
+  libLLVM12ARMDesc \
+  libLLVM12ARMAsmPrinter \
+  libLLVM12ARMDisassembler \
+  libLLVM12AArch64CodeGen \
+  libLLVM12AArch64Info \
+  libLLVM12AArch64AsmParser \
+  libLLVM12AArch64Desc \
+  libLLVM12AArch64AsmPrinter \
+  libLLVM12AArch64Utils \
+  libLLVM12AArch64Disassembler \
+  libLLVM12MipsCodeGen \
+  libLLVM12MipsInfo \
+  libLLVM12MipsAsmParser \
+  libLLVM12MipsDesc \
+  libLLVM12MipsAsmPrinter \
+  libLLVM12MipsDisassembler \
+  libLLVM12X86CodeGen \
+  libLLVM12X86Info \
+  libLLVM12X86Desc \
+  libLLVM12X86AsmParser \
+  libLLVM12X86AsmPrinter \
+  libLLVM12X86Utils \
+  libLLVM12X86Disassembler \
+  libLLVM12X86CodeGen \
+  libLLVM12AsmPrinter \
+  libLLVM12SelectionDAG \
+  libLLVM12CodeGen \
+  libLLVM12DebugInfoDWARF \
+  libLLVM12Instrumentation \
+  libLLVM12MCParser \
+  libLLVM12MCDisassembler \
+  libLLVM12Object \
+  libLLVM12BitReader \
+  libLLVM12ScalarOpts \
+  libLLVM12TransformUtils \
+  libLLVM12Analysis \
+  libLLVM12Target \
+  libLLVM12Core \
+  libLLVM12MC \
+  libLLVM12Support \
 
 include $(CLEAR_VARS)
 
@@ -66,6 +66,6 @@ LOCAL_LDLIBS += -lpthread -lm -ldl
 
 LOCAL_STATIC_LIBRARIES := $(llvm_dsymutil_STATIC_LIBRARIES)
 
-include $(LLVM11_HOST_BUILD_MK)
-include $(LLVM11_GEN_INTRINSICS_MK)
+include $(LLVM12_HOST_BUILD_MK)
+include $(LLVM12_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_EXECUTABLE)

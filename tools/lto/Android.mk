@@ -16,13 +16,13 @@
 
 LOCAL_PATH:= $(call my-dir)
 
-LLVM11_ROOT_PATH := $(LOCAL_PATH)/../../
-include $(LLVM11_ROOT_PATH)/llvm.mk
+LLVM12_ROOT_PATH := $(LOCAL_PATH)/../../
+include $(LLVM12_ROOT_PATH)/llvm.mk
 
 # For the host only
 # =====================================================
 include $(CLEAR_VARS)
-include $(CLEAR_TBLGEN_VARS11)
+include $(CLEAR_TBLGEN_VARS12)
 
 LOCAL_MODULE := libLTO
 
@@ -35,71 +35,71 @@ llvm_lto_SRC_FILES := \
 LOCAL_SRC_FILES := $(llvm_lto_SRC_FILES)
 
 llvm_lto_STATIC_LIBRARIES := \
-  libLLVM11Linker \
-  libLLVM11ipo \
-  libLLVM11DebugInfoDWARF \
-  libLLVM11DebugInfoPDB \
-  libLLVM11IRReader \
-  libLLVM11BitWriter \
-  libLLVM11BitReader \
-  libLLVM11ARMCodeGen \
-  libLLVM11ARMAsmParser \
-  libLLVM11ARMAsmPrinter \
-  libLLVM11ARMInfo \
-  libLLVM11ARMDesc \
-  libLLVM11ARMDisassembler \
-  libLLVM11MipsCodeGen \
-  libLLVM11MipsInfo \
-  libLLVM11MipsDesc \
-  libLLVM11MipsAsmParser \
-  libLLVM11MipsAsmPrinter \
-  libLLVM11MipsDisassembler \
-  libLLVM11X86CodeGen \
-  libLLVM11X86Info \
-  libLLVM11X86Desc \
-  libLLVM11X86AsmParser \
-  libLLVM11X86AsmPrinter \
-  libLLVM11X86Utils \
-  libLLVM11X86Disassembler \
-  libLLVM11AArch64CodeGen \
-  libLLVM11AArch64Info \
-  libLLVM11AArch64Desc \
-  libLLVM11AArch64AsmParser \
-  libLLVM11AArch64AsmPrinter \
-  libLLVM11AArch64Utils \
-  libLLVM11AArch64Disassembler \
-  libLLVM11ExecutionEngine \
-  libLLVM11RuntimeDyld \
-  libLLVM11MCJIT \
-  libLLVM11OrcJIT \
-  libLLVM11AsmPrinter \
-  libLLVM11SelectionDAG \
-  libLLVM11CodeGen \
-  libLLVM11Object \
-  libLLVM11ScalarOpts \
-  libLLVM11InstCombine \
-  libLLVM11Instrumentation \
-  libLLVM11TransformObjCARC \
-  libLLVM11TransformUtils \
-  libLLVM11Vectorize \
-  libLLVM11Analysis \
-  libLLVM11Target \
-  libLLVM11MCDisassembler \
-  libLLVM11MC \
-  libLLVM11MCParser \
-  libLLVM11Core \
-  libLLVM11AsmParser \
-  libLLVM11Option \
-  libLLVM11LTO \
-  libLLVM11Support \
-  libLLVM11ProfileData
+  libLLVM12Linker \
+  libLLVM12ipo \
+  libLLVM12DebugInfoDWARF \
+  libLLVM12DebugInfoPDB \
+  libLLVM12IRReader \
+  libLLVM12BitWriter \
+  libLLVM12BitReader \
+  libLLVM12ARMCodeGen \
+  libLLVM12ARMAsmParser \
+  libLLVM12ARMAsmPrinter \
+  libLLVM12ARMInfo \
+  libLLVM12ARMDesc \
+  libLLVM12ARMDisassembler \
+  libLLVM12MipsCodeGen \
+  libLLVM12MipsInfo \
+  libLLVM12MipsDesc \
+  libLLVM12MipsAsmParser \
+  libLLVM12MipsAsmPrinter \
+  libLLVM12MipsDisassembler \
+  libLLVM12X86CodeGen \
+  libLLVM12X86Info \
+  libLLVM12X86Desc \
+  libLLVM12X86AsmParser \
+  libLLVM12X86AsmPrinter \
+  libLLVM12X86Utils \
+  libLLVM12X86Disassembler \
+  libLLVM12AArch64CodeGen \
+  libLLVM12AArch64Info \
+  libLLVM12AArch64Desc \
+  libLLVM12AArch64AsmParser \
+  libLLVM12AArch64AsmPrinter \
+  libLLVM12AArch64Utils \
+  libLLVM12AArch64Disassembler \
+  libLLVM12ExecutionEngine \
+  libLLVM12RuntimeDyld \
+  libLLVM12MCJIT \
+  libLLVM12OrcJIT \
+  libLLVM12AsmPrinter \
+  libLLVM12SelectionDAG \
+  libLLVM12CodeGen \
+  libLLVM12Object \
+  libLLVM12ScalarOpts \
+  libLLVM12InstCombine \
+  libLLVM12Instrumentation \
+  libLLVM12TransformObjCARC \
+  libLLVM12TransformUtils \
+  libLLVM12Vectorize \
+  libLLVM12Analysis \
+  libLLVM12Target \
+  libLLVM12MCDisassembler \
+  libLLVM12MC \
+  libLLVM12MCParser \
+  libLLVM12Core \
+  libLLVM12AsmParser \
+  libLLVM12Option \
+  libLLVM12LTO \
+  libLLVM12Support \
+  libLLVM12ProfileData
 
 LOCAL_LDLIBS_darwin := -lpthread -ldl
 LOCAL_LDLIBS_linux := -lpthread -ldl
 
 LOCAL_STATIC_LIBRARIES := $(llvm_lto_STATIC_LIBRARIES) $(llvm_lto_STATIC_LIBRARIES)
 
-include $(LLVM11_HOST_BUILD_MK)
-include $(LLVM11_GEN_ATTRIBUTES_MK)
-include $(LLVM11_GEN_INTRINSICS_MK)
+include $(LLVM12_HOST_BUILD_MK)
+include $(LLVM12_GEN_ATTRIBUTES_MK)
+include $(LLVM12_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_SHARED_LIBRARY)

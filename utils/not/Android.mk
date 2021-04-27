@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-LLVM11_ROOT_PATH := $(LOCAL_PATH)/../..
+LLVM12_ROOT_PATH := $(LOCAL_PATH)/../..
 
 
 #===---------------------------------------------------------------===
@@ -11,8 +11,8 @@ not_SRC_FILES := \
   not.cpp
 
 not_STATIC_LIBRARIES := \
-  libLLVM11Core               \
-  libLLVM11Support            \
+  libLLVM12Core               \
+  libLLVM12Support            \
 
 include $(CLEAR_VARS)
 
@@ -27,6 +27,6 @@ LOCAL_STATIC_LIBRARIES := $(not_STATIC_LIBRARIES)
 
 LOCAL_LDLIBS += -lpthread -lm -ldl
 
-include $(LLVM11_ROOT_PATH)/llvm.mk
-include $(LLVM11_HOST_BUILD_MK)
+include $(LLVM12_ROOT_PATH)/llvm.mk
+include $(LLVM12_HOST_BUILD_MK)
 include $(BUILD_HOST_EXECUTABLE)

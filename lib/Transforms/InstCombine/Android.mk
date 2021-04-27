@@ -1,6 +1,6 @@
 LOCAL_PATH:= $(call my-dir)
 
-transforms_inst_combine_TBLGEN_TABLES11 := \
+transforms_inst_combine_TBLGEN_TABLES12 := \
   InstCombineTables.inc
 
 transforms_inst_combine_SRC_FILES := \
@@ -24,16 +24,16 @@ transforms_inst_combine_SRC_FILES := \
 # =====================================================
 include $(CLEAR_VARS)
 
-TBLGEN_TABLES11 := $(transforms_inst_combine_TBLGEN_TABLES11)
+TBLGEN_TABLES12 := $(transforms_inst_combine_TBLGEN_TABLES12)
 LOCAL_SRC_FILES := $(transforms_inst_combine_SRC_FILES)
-LOCAL_MODULE:= libLLVM11InstCombine
+LOCAL_MODULE:= libLLVM12InstCombine
 
 LOCAL_MODULE_HOST_OS := darwin linux windows
 
-include $(LLVM11_HOST_BUILD_MK)
-include $(LLVM11_TBLGEN_RULES_MK)
-include $(LLVM11_GEN_ATTRIBUTES_MK)
-include $(LLVM11_GEN_INTRINSICS_MK)
+include $(LLVM12_HOST_BUILD_MK)
+include $(LLVM12_TBLGEN_RULES_MK)
+include $(LLVM12_GEN_ATTRIBUTES_MK)
+include $(LLVM12_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_STATIC_LIBRARY)
 
 # For the device
@@ -41,13 +41,13 @@ include $(BUILD_HOST_STATIC_LIBRARY)
 ifneq (true,$(DISABLE_LLVM_DEVICE_BUILDS))
 include $(CLEAR_VARS)
 
-TBLGEN_TABLES11 := $(transforms_inst_combine_TBLGEN_TABLES11)
+TBLGEN_TABLES12 := $(transforms_inst_combine_TBLGEN_TABLES12)
 LOCAL_SRC_FILES := $(transforms_inst_combine_SRC_FILES)
-LOCAL_MODULE:= libLLVM11InstCombine
+LOCAL_MODULE:= libLLVM12InstCombine
 
-include $(LLVM11_DEVICE_BUILD_MK)
-include $(LLVM11_TBLGEN_RULES_MK)
-include $(LLVM11_GEN_ATTRIBUTES_MK)
-include $(LLVM11_GEN_INTRINSICS_MK)
+include $(LLVM12_DEVICE_BUILD_MK)
+include $(LLVM12_TBLGEN_RULES_MK)
+include $(LLVM12_GEN_ATTRIBUTES_MK)
+include $(LLVM12_GEN_INTRINSICS_MK)
 include $(BUILD_STATIC_LIBRARY)
 endif

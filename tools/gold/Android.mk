@@ -16,15 +16,15 @@
 
 LOCAL_PATH:= $(call my-dir)
 
-LLVM11_ROOT_PATH := $(LOCAL_PATH)/../../
-include $(LLVM11_ROOT_PATH)/llvm.mk
+LLVM12_ROOT_PATH := $(LOCAL_PATH)/../../
+include $(LLVM12_ROOT_PATH)/llvm.mk
 
 # For the host only
 # =====================================================
 include $(CLEAR_VARS)
-include $(CLEAR_TBLGEN_VARS11)
+include $(CLEAR_TBLGEN_VARS12)
 
-LOCAL_MODULE := LLVM11gold
+LOCAL_MODULE := LLVM12gold
 
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 
@@ -33,7 +33,7 @@ llvm_gold_SRC_FILES := \
 
 LOCAL_SRC_FILES := $(llvm_gold_SRC_FILES)
 
-LOCAL_SHARED_LIBRARIES := libLLVM11
+LOCAL_SHARED_LIBRARIES := libLLVM12
 
 ifndef USE_MINGW
 LOCAL_LDLIBS += -lpthread -ldl
@@ -41,7 +41,7 @@ endif
 
 LOCAL_C_INCLUDES += toolchain/binutils/binutils-2.25/include
 
-include $(LLVM11_HOST_BUILD_MK)
-include $(LLVM11_GEN_ATTRIBUTES_MK)
-include $(LLVM11_GEN_INTRINSICS_MK)
+include $(LLVM12_HOST_BUILD_MK)
+include $(LLVM12_GEN_ATTRIBUTES_MK)
+include $(LLVM12_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_SHARED_LIBRARY)

@@ -13,13 +13,13 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := $(bitcode_reader_SRC_FILES)
 
-LOCAL_MODULE:= libLLVM11BitReader
+LOCAL_MODULE:= libLLVM12BitReader
 
 LOCAL_MODULE_HOST_OS := darwin linux windows
 
-include $(LLVM11_HOST_BUILD_MK)
-include $(LLVM11_GEN_ATTRIBUTES_MK)
-include $(LLVM11_GEN_INTRINSICS_MK)
+include $(LLVM12_HOST_BUILD_MK)
+include $(LLVM12_GEN_ATTRIBUTES_MK)
+include $(LLVM12_GEN_INTRINSICS_MK)
 include $(BUILD_HOST_STATIC_LIBRARY)
 
 # For the device
@@ -29,10 +29,10 @@ ifneq (true,$(DISABLE_LLVM_DEVICE_BUILDS))
 
 LOCAL_SRC_FILES := $(bitcode_reader_SRC_FILES)
 
-LOCAL_MODULE:= libLLVM11BitReader
+LOCAL_MODULE:= libLLVM12BitReader
 
-include $(LLVM11_DEVICE_BUILD_MK)
-include $(LLVM11_GEN_ATTRIBUTES_MK)
-include $(LLVM11_GEN_INTRINSICS_MK)
+include $(LLVM12_DEVICE_BUILD_MK)
+include $(LLVM12_GEN_ATTRIBUTES_MK)
+include $(LLVM12_GEN_INTRINSICS_MK)
 include $(BUILD_STATIC_LIBRARY)
 endif

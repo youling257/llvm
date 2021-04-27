@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-LLVM11_ROOT_PATH := $(LOCAL_PATH)/../..
+LLVM12_ROOT_PATH := $(LOCAL_PATH)/../..
 
 #===---------------------------------------------------------------===
 # llvm-config command line tool
@@ -12,8 +12,8 @@ llvm_config_SRC_FILES := \
   llvm-config.cpp
 
 llvm_config_STATIC_LIBRARIES := \
-  libLLVM11Core \
-  libLLVM11Support
+  libLLVM12Core \
+  libLLVM12Support
 
 LOCAL_MODULE := llvm-config
 LOCAL_MODULE_TAGS := optional
@@ -44,6 +44,6 @@ LOCAL_ADDITIONAL_DEPENDENCIES := \
   $(LOCAL_PATH)/Android.mk \
   $(LOCAL_GENERATED_SOURCES)
 
-include $(LLVM11_ROOT_PATH)/llvm.mk
-include $(LLVM11_HOST_BUILD_MK)
+include $(LLVM12_ROOT_PATH)/llvm.mk
+include $(LLVM12_HOST_BUILD_MK)
 include $(BUILD_HOST_EXECUTABLE)

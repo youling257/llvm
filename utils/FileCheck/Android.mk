@@ -4,7 +4,7 @@ filecheck_SRC_FILES := \
   FileCheck.cpp
 
 filecheck_STATIC_LIBRARIES := \
-  libLLVM11Support
+  libLLVM12Support
 
 include $(CLEAR_VARS)
 
@@ -18,5 +18,5 @@ LOCAL_CFLAGS += -D __STDC_LIMIT_MACROS -D __STDC_CONSTANT_MACROS
 #REQUIRES_EH := 1
 #REQUIRES_RTTI := 1
 
-include $(LLVM11_HOST_BUILD_MK)
+include $(LLVM12_HOST_BUILD_MK)
 include $(BUILD_HOST_EXECUTABLE)
