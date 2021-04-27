@@ -72,6 +72,7 @@ subdirs := \
   lib/Transforms/CFGuard \
   lib/Transforms/Coroutines \
   lib/Transforms/Hello \
+  lib/Transforms/HelloNew \
   lib/Transforms/IPO \
   lib/Transforms/InstCombine \
   lib/Transforms/Instrumentation \
