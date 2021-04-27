@@ -10,12 +10,13 @@ codegen_SRC_FILES := \
   BranchRelaxation.cpp \
   BreakFalseDeps.cpp \
   BuiltinGCs.cpp \
-  BBSectionsPrepare.cpp \
+  BasicBlockSections.cpp \
   CalcSpillWeights.cpp \
   CallingConvLower.cpp \
   CFGuardLongjmp.cpp \
   CFIInstrInserter.cpp \
   CodeGen.cpp \
+  CodeGenPassBuilder.cpp \
   CodeGenPrepare.cpp \
   CommandFlags.cpp \
   CriticalAntiDepBreaker.cpp \
@@ -51,7 +52,6 @@ codegen_SRC_FILES := \
   LatencyPriorityQueue.cpp \
   LazyMachineBlockFrequencyInfo.cpp \
   LexicalScopes.cpp \
-  LiveDebugValues.cpp \
   LiveDebugVariables.cpp \
   LiveIntervals.cpp \
   LiveInterval.cpp \
@@ -77,6 +77,7 @@ codegen_SRC_FILES := \
   MachineCombiner.cpp \
   MachineCopyPropagation.cpp \
   MachineCSE.cpp \
+  MachineCheckDebugify.cpp \
   MachineDebugify.cpp \
   MachineDominanceFrontier.cpp \
   MachineDominators.cpp \
@@ -84,6 +85,7 @@ codegen_SRC_FILES := \
   MachineFunction.cpp \
   MachineFunctionPass.cpp \
   MachineFunctionPrinterPass.cpp \
+  MachineFunctionSplitter.cpp \
   MachineInstrBundle.cpp \
   MachineInstr.cpp \
   MachineLICM.cpp \
@@ -94,6 +96,7 @@ codegen_SRC_FILES := \
   MachineOperand.cpp \
   MachineOptimizationRemarkEmitter.cpp \
   MachineOutliner.cpp \
+  MachinePassManager.cpp \
   MachinePipeliner.cpp \
   MachinePostDominators.cpp \
   MachineRegionInfo.cpp \
@@ -106,6 +109,7 @@ codegen_SRC_FILES := \
   MachineTraceMetrics.cpp \
   MachineVerifier.cpp \
   ModuloSchedule.cpp \
+  MultiHazardRecognizer.cpp \
   PatchableFunction.cpp \
   MBFIWrapper.cpp \
   MIRPrinter.cpp \
@@ -122,6 +126,7 @@ codegen_SRC_FILES := \
   PreISelIntrinsicLowering.cpp \
   ProcessImplicitDefs.cpp \
   PrologEpilogInserter.cpp \
+  PseudoProbeInserter.cpp \
   PseudoSourceValue.cpp \
   RDFGraph.cpp \
   RDFLiveness.cpp \
@@ -137,6 +142,7 @@ codegen_SRC_FILES := \
   RegisterPressure.cpp \
   RegisterScavenging.cpp \
   RenameIndependentSubregs.cpp \
+  MachineStableHash.cpp \
   MIRVRegNamerUtils.cpp \
   MIRNamerPass.cpp \
   MIRCanonicalizerPass.cpp \
@@ -146,7 +152,6 @@ codegen_SRC_FILES := \
   ResetMachineFunctionPass.cpp \
   SafeStack.cpp \
   SafeStackLayout.cpp \
-  ScalarizeMaskedMemIntrin.cpp \
   ScheduleDAG.cpp \
   ScheduleDAGInstrs.cpp \
   ScheduleDAGPrinter.cpp \
@@ -182,7 +187,10 @@ codegen_SRC_FILES := \
   VirtRegMap.cpp \
   WasmEHPrepare.cpp \
   WinEHPrepare.cpp \
-  XRayInstrumentation.cpp
+  XRayInstrumentation.cpp \
+  LiveDebugValues/LiveDebugValues.cpp \
+  LiveDebugValues/VarLocBasedImpl.cpp \
+  LiveDebugValues/InstrRefBasedImpl.cpp
 
 # For the host
 # =====================================================

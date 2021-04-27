@@ -2,6 +2,7 @@ LOCAL_PATH:= $(call my-dir)
 
 transforms_ipo_SRC_FILES := \
   AlwaysInliner.cpp \
+  Annotation2Metadata.cpp \
   ArgumentPromotion.cpp \
   Attributor.cpp \
   AttributorAttributes.cpp \
@@ -20,8 +21,8 @@ transforms_ipo_SRC_FILES := \
   GlobalOpt.cpp \
   GlobalSplit.cpp \
   HotColdSplitting.cpp \
-  IPConstantPropagation.cpp \
   IPO.cpp \
+  IROutliner.cpp \
   InferFunctionAttrs.cpp \
   InlineSimple.cpp \
   Inliner.cpp \
@@ -33,7 +34,9 @@ transforms_ipo_SRC_FILES := \
   PartialInlining.cpp \
   PassManagerBuilder.cpp \
   PruneEH.cpp \
+  SampleContextTracker.cpp \
   SampleProfile.cpp \
+  SampleProfileProbe.cpp \
   SCCP.cpp \
   StripDeadPrototypes.cpp \
   StripSymbols.cpp \

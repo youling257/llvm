@@ -4,25 +4,30 @@ x86_codegen_TBLGEN_TABLES12 := \
   X86GenAsmMatcher.inc \
   X86GenAsmWriter.inc \
   X86GenAsmWriter1.inc \
-  X86GenDisassemblerTables.inc \
-  X86GenRegisterInfo.inc \
-  X86GenInstrInfo.inc \
+  X86GenCallingConv.inc \
   X86GenDAGISel.inc \
+  X86GenDisassemblerTables.inc \
+  X86GenEVEX2VEXTables.inc \
   X86GenExegesis.inc \
   X86GenFastISel.inc \
-  X86GenSubtargetInfo.inc \
-  X86GenCallingConv.inc \
-  X86GenEVEX2VEXTables.inc
+  X86GenGlobalISel.inc \
+  X86GenInstrInfo.inc \
+  X86GenRegisterBank.inc \
+  X86GenRegisterInfo.inc \
+  X86GenSubtargetInfo.inc
 
 x86_codegen_SRC_FILES := \
   X86AsmPrinter.cpp \
   X86AvoidTrailingCall.cpp \
   X86CallFrameOptimization.cpp \
   X86CallingConv.cpp \
+  X86CallLowering.cpp \
   X86CmovConversion.cpp \
-  X86CondBrFolding.cpp \
   X86DomainReassignment.cpp \
   X86DiscriminateMemOps.cpp \
+  X86LowerAMXType.cpp \
+  X86TileConfig.cpp \
+  X86PreTileConfig.cpp \
   X86ExpandPseudo.cpp \
   X86FastISel.cpp \
   X86FixupBWInsts.cpp \
@@ -32,16 +37,19 @@ x86_codegen_SRC_FILES := \
   X86FlagsCopyLowering.cpp \
   X86FloatingPoint.cpp \
   X86FrameLowering.cpp \
+  X86InstructionSelector.cpp \
   X86ISelDAGToDAG.cpp \
   X86ISelLowering.cpp \
   X86IndirectBranchTracking.cpp \
   X86IndirectThunks.cpp \
   X86InterleavedAccess.cpp \
   X86InsertPrefetch.cpp \
+  X86InstCombineIntrinsic.cpp \
   X86InstrFMA3Info.cpp \
   X86InstrFoldTables.cpp \
   X86InstrInfo.cpp \
   X86EvexToVex.cpp \
+  X86LegalizerInfo.cpp \
   X86LoadValueInjectionLoadHardening.cpp \
   X86LoadValueInjectionRetHardening.cpp \
   X86MCInstLower.cpp \
@@ -50,6 +58,7 @@ x86_codegen_SRC_FILES := \
   X86OptimizeLEAs.cpp \
   X86PadShortFunction.cpp \
   X86PartialReduction.cpp \
+  X86RegisterBankInfo.cpp \
   X86RegisterInfo.cpp \
   X86SelectionDAGInfo.cpp \
   X86ShuffleDecodeConstantPool.cpp \
@@ -63,18 +72,6 @@ x86_codegen_SRC_FILES := \
   X86WinAllocaExpander.cpp \
   X86WinEHState.cpp \
   X86InsertWait.cpp
-
-ifeq ($(FORCE_BUILD_LLVM_GLOBAL_ISEL),true)
-x86_codegen_TBLGEN_TABLES12 += \
-  X86GenRegisterBank.inc \
-  X86GenGlobalISel.inc
-
-x86_codegen_SRC_FILES += \
-  X86CallLowering.cpp \
-  X86LegalizerInfo.cpp \
-  X86RegisterBankInfo.cpp \
-  X86InstructionSelector.cpp
-endif
 
 # For the host
 # =====================================================

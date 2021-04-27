@@ -3,11 +3,12 @@ LOCAL_PATH := $(call my-dir)
 codegen_asmprinter_SRC_FILES := \
   AccelTable.cpp \
   AddressPool.cpp \
+  AIXException.cpp \
   ARMException.cpp \
   AsmPrinter.cpp \
   AsmPrinterDwarf.cpp \
-  DbgEntityHistoryCalculator.cpp \
   AsmPrinterInlineAsm.cpp \
+  DbgEntityHistoryCalculator.cpp \
   DebugHandlerBase.cpp \
   DebugLocStream.cpp \
   DIE.cpp \
@@ -22,6 +23,7 @@ codegen_asmprinter_SRC_FILES := \
   EHStreamer.cpp \
   ErlangGCPrinter.cpp \
   OcamlGCPrinter.cpp \
+  PseudoProbePrinter.cpp \
   WinCFGuard.cpp \
   WinException.cpp \
   CodeViewDebug.cpp \

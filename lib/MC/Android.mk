@@ -34,6 +34,7 @@ mc_SRC_FILES := \
   MCObjectFileInfo.cpp \
   MCObjectStreamer.cpp \
   MCObjectWriter.cpp \
+  MCPseudoProbe.cpp \
   MCRegisterInfo.cpp \
   MCSchedule.cpp \
   MCSection.cpp \

@@ -1,8 +1,6 @@
 LOCAL_PATH:= $(call my-dir)
 
 textapi_SRC_FILES := \
-  ELF/ELFStub.cpp \
-  ELF/TBEHandler.cpp \
   MachO/Architecture.cpp \
   MachO/ArchitectureSet.cpp \
   MachO/InterfaceFile.cpp \

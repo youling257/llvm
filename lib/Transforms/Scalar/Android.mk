@@ -3,10 +3,11 @@ LOCAL_PATH:= $(call my-dir)
 transforms_scalar_SRC_FILES := \
   ADCE.cpp \
   AlignmentFromAssumptions.cpp \
+  AnnotationRemarks.cpp \
   BDCE.cpp \
   CallSiteSplitting.cpp \
   ConstantHoisting.cpp \
-  ConstantProp.cpp \
+  ConstraintElimination.cpp \
   CorrelatedValuePropagation.cpp \
   DCE.cpp \
   DeadStoreElimination.cpp \
@@ -34,6 +35,7 @@ transforms_scalar_SRC_FILES := \
   LoopIdiomRecognize.cpp \
   LoopInstSimplify.cpp \
   LoopInterchange.cpp \
+  LoopFlatten.cpp \
   LoopLoadElimination.cpp \
   LoopPassManager.cpp \
   LoopPredication.cpp \
@@ -66,6 +68,7 @@ transforms_scalar_SRC_FILES := \
   SROA.cpp \
   Scalar.cpp \
   Scalarizer.cpp \
+  ScalarizeMaskedMemIntrin.cpp \
   SeparateConstOffsetFromGEP.cpp \
   SimpleLoopUnswitch.cpp \
   SimplifyCFGPass.cpp \

@@ -1,24 +1,35 @@
 LOCAL_PATH := $(call my-dir)
 
 aarch64_codegen_TBLGEN_TABLES12 := \
-  AArch64GenRegisterInfo.inc \
-  AArch64GenInstrInfo.inc \
+  AArch64GenAsmMatcher.inc \
   AArch64GenAsmWriter.inc \
   AArch64GenAsmWriter1.inc \
-  AArch64GenDAGISel.inc \
   AArch64GenCallingConv.inc \
-  AArch64GenAsmMatcher.inc \
-  AArch64GenSubtargetInfo.inc \
-  AArch64GenMCCodeEmitter.inc \
+  AArch64GenDAGISel.inc \
+  AArch64GenDisassemblerTables.inc \
   AArch64GenFastISel.inc \
+  AArch64GenGlobalISel.inc \
   AArch64GenPreLegalizeGICombiner.inc \
   AArch64GenPostLegalizeGICombiner.inc \
-  AArch64GenDisassemblerTables.inc \
+  AArch64GenPostLegalizeGILowering.inc \
+  AArch64GenInstrInfo.inc \
+  AArch64GenMCCodeEmitter.inc \
   AArch64GenMCPseudoLowering.inc \
+  AArch64GenRegisterBank.inc \
+  AArch64GenRegisterInfo.inc \
+  AArch64GenSubtargetInfo.inc \
   AArch64GenSystemOperands.inc \
   AArch64GenExegesis.inc
 
 aarch64_codegen_SRC_FILES := \
+  GISel/AArch64CallLowering.cpp \
+  GISel/AArch64InstructionSelector.cpp \
+  GISel/AArch64LegalizerInfo.cpp \
+  GISel/AArch64PreLegalizerCombiner.cpp \
+  GISel/AArch64PostLegalizerCombiner.cpp \
+  GISel/AArch64PostLegalizerLowering.cpp \
+  GISel/AArch64PostSelectOptimize.cpp \
+  GISel/AArch64RegisterBankInfo.cpp \
   AArch64A57FPLoadBalancing.cpp \
   AArch64AdvSIMDScalarPass.cpp \
   AArch64AsmPrinter.cpp \
@@ -26,7 +37,6 @@ aarch64_codegen_SRC_FILES := \
   AArch64CallingConvention.cpp \
   AArch64CleanupLocalDynamicTLSPass.cpp \
   AArch64CollectLOH.cpp \
-  AArch64CompressJumpTables.cpp \
   AArch64CondBrTuning.cpp \
   AArch64ConditionalCompares.cpp \
   AArch64DeadRegisterDefinitionsPass.cpp \
@@ -36,6 +46,7 @@ aarch64_codegen_SRC_FILES := \
   AArch64FastISel.cpp \
   AArch64A53Fix835769.cpp \
   AArch64FrameLowering.cpp \
+  AArch64CompressJumpTables.cpp \
   AArch64ConditionOptimizer.cpp \
   AArch64RedundantCopyElimination.cpp \
   AArch64ISelDAGToDAG.cpp \
@@ -60,20 +71,6 @@ aarch64_codegen_SRC_FILES := \
   AArch64TargetTransformInfo.cpp \
   SVEIntrinsicOpts.cpp \
   AArch64SIMDInstrOpt.cpp
-
-ifeq ($(FORCE_BUILD_LLVM_GLOBAL_ISEL),true)
-aarch64_codegen_TBLGEN_TABLES12 += \
-  AArch64GenRegisterBank.inc \
-  AArch64GenGlobalISel.inc
-
-aarch64_codegen_SRC_FILES += \
-  GISel/AArch64CallLowering.cpp \
-  GISel/AArch64InstructionSelector.cpp \
-  GISel/AArch64LegalizerInfo.cpp \
-  GISel/AArch64PreLegalizerCombiner.cpp \
-  GISel/AArch64PostLegalizerCombiner.cpp \
-  GISel/AArch64RegisterBankInfo.cpp
-endif
 
 # For the host
 # =====================================================

@@ -3,6 +3,7 @@ LLVM12_ROOT_PATH := $(LOCAL_PATH)/../..
 include $(LLVM12_ROOT_PATH)/llvm.mk
 
 libtablegen_SRC_FILES := \
+  DetailedRecordsBackend.cpp \
   Error.cpp \
   JSONBackend.cpp \
   Main.cpp \
@@ -10,6 +11,7 @@ libtablegen_SRC_FILES := \
   SetTheory.cpp \
   StringMatcher.cpp \
   TableGenBackend.cpp \
+  TableGenBackendSkeleton.cpp \
   TGLexer.cpp \
   TGParser.cpp
 
