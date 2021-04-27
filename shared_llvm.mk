@@ -86,14 +86,14 @@ llvm_post_static_libraries := \
   libLLVM12TextAPI \
   libLLVM12CFGuard \
   libLLVM12FrontendOpenMP \
-  libLLVM12HelloNew
+  libLLVM12HelloNew \
+  libLLVM12OrcShared
 
 llvm_host_static_libraries := \
   libLLVM12ExecutionEngine \
   libLLVM12RuntimeDyld \
   libLLVM12MCJIT \
   libLLVM12OrcJIT \
-  libLLVM12OrcError \
   libLLVM12JITLink
 
 llvm_device_static_libraries := \
@@ -101,7 +101,6 @@ llvm_device_static_libraries := \
   libLLVM12RuntimeDyld \
   libLLVM12MCJIT \
   libLLVM12OrcJIT \
-  libLLVM12OrcError \
   libLLVM12JITLink
 
 # HOST LLVM shared library build
