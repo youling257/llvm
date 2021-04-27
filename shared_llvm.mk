@@ -85,7 +85,8 @@ llvm_post_static_libraries := \
   libLLVM12MIRParser \
   libLLVM12TextAPI \
   libLLVM12CFGuard \
-  libLLVM12FrontendOpenMP
+  libLLVM12FrontendOpenMP \
+  libLLVM12HelloNew
 
 llvm_host_static_libraries := \
   libLLVM12ExecutionEngine \
