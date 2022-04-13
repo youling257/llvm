@@ -3,19 +3,19 @@ LOCAL_PATH := $(call my-dir)
 LLVM12_ROOT_PATH := $(LOCAL_PATH)/../..
 
 #===---------------------------------------------------------------===
-# llvm-config command line tool
+# llvm-config-12 command line tool
 #===---------------------------------------------------------------===
 
 include $(CLEAR_VARS)
 
-llvm_config_SRC_FILES := \
+llvm_config_12_SRC_FILES := \
   llvm-config.cpp
 
-llvm_config_STATIC_LIBRARIES := \
+llvm_config_12_STATIC_LIBRARIES := \
   libLLVM12Core \
   libLLVM12Support
 
-LOCAL_MODULE := llvm-config
+LOCAL_MODULE := llvm-config-12
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_IS_HOST_MODULE := true
@@ -36,8 +36,8 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 
 LOCAL_C_INCLUDES := $(generated_sources)
 
-LOCAL_SRC_FILES := $(llvm_config_SRC_FILES)
-LOCAL_STATIC_LIBRARIES := $(llvm_config_STATIC_LIBRARIES)
+LOCAL_SRC_FILES := $(llvm_config_12_SRC_FILES)
+LOCAL_STATIC_LIBRARIES := $(llvm_config_12_STATIC_LIBRARIES)
 
 LOCAL_LDLIBS += -lpthread -lm -ldl
 LOCAL_ADDITIONAL_DEPENDENCIES := \

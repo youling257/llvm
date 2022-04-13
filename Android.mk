@@ -131,7 +131,8 @@ endif
 
 # LLVM Command Line Utilities
 subdirs += \
-  utils/TableGen
+  utils/TableGen \
+  tools/llvm-config
 
 include $(LOCAL_PATH)/llvm.mk
 include $(LOCAL_PATH)/shared_llvm.mk
